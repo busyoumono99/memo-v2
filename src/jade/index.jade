@@ -1,4 +1,4 @@
-!!! 5
+doctype html
 html(lang="ja")
   head
     meta(charset="utf-8")
@@ -8,16 +8,16 @@ html(lang="ja")
     title Funky Tunes | Template
 
     //- main JS libs
-    script(src="js/libs/jquery-1.11.0.min.js")
-    script(src="js/libs/jquery-ui.min.js")
-    script(src="js/libs/bootstrap.min.js")
+    //- script(src="js/libs/jquery-1.11.0.min.js")
+    //- script(src="js/libs/jquery-ui.min.js")
+    //- script(src="js/libs/bootstrap.min.js")
 
     //- Style CSS
-    link(href="css/bootstrap.css", media="screen", rel="stylesheet")
-    link(href="style.css", media="screen", rel="stylesheet")
+    link(href="bower_components/bootstrap/dist/css/bootstrap.css", media="screen", rel="stylesheet")
+    link(href="assets/funky-tunes-css/style.css", media="screen", rel="stylesheet")
 
     //- General Scripts
-    script(src="js/general.js")
+    //- script(src="js/general.js")
 
 
   body
@@ -27,3 +27,4 @@ html(lang="ja")
         | Start Your Work Here
 
     //- container
+    script(type="text/javascript", src="bower_components/requirejs/require.js", data-main="js/main")
