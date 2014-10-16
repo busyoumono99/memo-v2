@@ -5,16 +5,26 @@ html(lang="ja")
     meta(name="author", content="")
     meta(name="keywords", content="")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    title Funky Tunes | Template
+    title Memo-v2
 
-    //- main JS libs
-    //- script(src="js/libs/jquery-1.11.0.min.js")
-    //- script(src="js/libs/jquery-ui.min.js")
-    //- script(src="js/libs/bootstrap.min.js")
 
-    //- Style CSS
-    link(href="bower_components/bootstrap/dist/css/bootstrap.css", media="screen", rel="stylesheet")
-    link(href="assets/funky-tunes-css/style.css", media="screen", rel="stylesheet")
+     //- Bootstrap Core CSS
+    link(href="assets/sb-admin-2/css/bootstrap.min.css",rel="stylesheet")
+
+    //- MetisMenu CSS
+    link(href="assets/sb-admin-2/css/plugins/metisMenu/metisMenu.min.css",rel="stylesheet")
+
+    //- Timeline CSS
+    link(href="assets/sb-admin-2/css/plugins/timeline.css",rel="stylesheet")
+
+    //- Custom CSS
+    link(href="assets/sb-admin-2/css/sb-admin-2.css",rel="stylesheet")
+
+    //- Morris Charts CSS
+    link(href="assets/sb-admin-2/css/plugins/morris.css",rel="stylesheet")
+
+    //- Custom Fonts
+    link(href="assets/sb-admin-2/font-awesome-4.1.0/css/font-awesome.min.css",rel="stylesheet",type="text/css")
 
     //- General Scripts
     //- script(src="js/general.js")
@@ -22,9 +32,139 @@ html(lang="ja")
 
   body
     div.body-wrap
+        nav.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bottom: 0')
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='index.html') Memo-v2
+          // /.navbar-header
+          ul.nav.navbar-top-links.navbar-right
+            li.dropdown
+              a.dropdown-toggle(data-toggle='dropdown', href='#')
+                i.fa.fa-user.fa-fw
+                i.fa.fa-caret-down
+              ul.dropdown-menu.dropdown-user
+                li
+                  a(href='#')
+                    i.fa.fa-user.fa-fw
+                    | User Profile
+                li
+                  a(href='#')
+                    i.fa.fa-gear.fa-fw
+                    | Settings
+                li.divider
+                li
+                  a(href='login.html')
+                    i.fa.fa-sign-out.fa-fw
+                    | Logout
+              // /.dropdown-user
+            // /.dropdown
+          // /.navbar-top-links
+          .navbar-default.sidebar(role='navigation')
+            .sidebar-nav.navbar-collapse
+              ul#side-menu.nav
+                li.sidebar-search
+                  .input-group.custom-search-form
+                    input.form-control(type='text', placeholder='Search...')
+                    span.input-group-btn
+                      button.btn.btn-default(type='button')
+                        i.fa.fa-search
+                  // /input-group
+                li
+                  a.active(href='index.html')
+                    i.fa.fa-dashboard.fa-fw
+                    | Dashboard
+                li
+                  a(href='#')
+                    i.fa.fa-bar-chart-o.fa-fw
+                    | Charts
+                    span.fa.arrow
+                  ul.nav.nav-second-level
+                    li
+                      a(href='flot.html') Flot Charts
+                    li
+                      a(href='morris.html') Morris.js Charts
+                  // /.nav-second-level
+                li
+                  a(href='tables.html')
+                    i.fa.fa-table.fa-fw
+                    | Tables
+                li
+                  a(href='forms.html')
+                    i.fa.fa-edit.fa-fw
+                    | Forms
+                li
+                  a(href='#')
+                    i.fa.fa-wrench.fa-fw
+                    | UI Elements
+                    span.fa.arrow
+                  ul.nav.nav-second-level
+                    li
+                      a(href='panels-wells.html') Panels and Wells
+                    li
+                      a(href='buttons.html') Buttons
+                    li
+                      a(href='notifications.html') Notifications
+                    li
+                      a(href='typography.html') Typography
+                    li
+                      a(href='grid.html') Grid
+                  // /.nav-second-level
+                li
+                  a(href='#')
+                    i.fa.fa-sitemap.fa-fw
+                    | Multi-Level Dropdown
+                    span.fa.arrow
+                  ul.nav.nav-second-level
+                    li
+                      a(href='#') Second Level Item
+                    li
+                      a(href='#') Second Level Item
+                    li
+                      a(href='#')
+                        | Third Level
+                        span.fa.arrow
+                      ul.nav.nav-third-level
+                        li
+                          a(href='#') Third Level Item
+                        li
+                          a(href='#') Third Level Item
+                        li
+                          a(href='#') Third Level Item
+                        li
+                          a(href='#') Third Level Item
+                      // /.nav-third-level
+                  // /.nav-second-level
+                li
+                  a(href='#')
+                    i.fa.fa-files-o.fa-fw
+                    | Sample Pages
+                    span.fa.arrow
+                  ul.nav.nav-second-level
+                    li
+                      a(href='blank.html') Blank Page
+                    li
+                      a(href='login.html') Login Page
+                  // /.nav-second-level
+            // /.sidebar-collapse
+          // /.navbar-static-side
+
     //- container
-    div.container
-        | Start Your Work Here
+    div#page-wrapper
+        div.row
+            div.col-lg-12
+                h1.page-header main
+
+
+
+
+
+
+
+
 
     //- container
     script(type="text/javascript", src="bower_components/requirejs/require.js", data-main="js/main")
