@@ -14,7 +14,7 @@
 #list-table .todo { width: 5%; text-align: center;}
 #list-table .title { width: 30%;}
 /*#list-table .content { width: 10%;}*/
-
+#list-table .func { width: 105px;}
 
 /* ---------------------------------- */
 /* New memo                           */
