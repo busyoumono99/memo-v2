@@ -55,14 +55,14 @@
             <div class="inner">
               <h4>Notes</h4>
               <div data-toggle="buttons" class="btn-group-vertical">
-                <label class="btn btn-success">
-                  <input id="option1" type="radio" name="options">All
+                <label class="btn btn-success active">
+                  <input id="option1" type="radio" name="notes" checked="">All
                 </label>
                 <label class="btn btn-success">
-                  <input id="option2" type="radio" name="options">Option 2
+                  <input id="option2" type="radio" name="notes">Note 1
                 </label>
                 <label class="btn btn-success">
-                  <input id="option3" type="radio" name="options">Option 3
+                  <input id="option3" type="radio" name="notes">Note 2
                 </label>
               </div>
             </div>
@@ -72,13 +72,13 @@
               <h4>Tags</h4>
               <div data-toggle="buttons" class="btn-group-vertical">
                 <label class="btn btn-success">
-                  <input type="checkbox" checked="">Option 1
+                  <input type="checkbox">tag 1
                 </label>
                 <label class="btn btn-success">
-                  <input type="checkbox">Option 2
+                  <input type="checkbox">tag 2
                 </label>
                 <label class="btn btn-success">
-                  <input type="checkbox">Option 3
+                  <input type="checkbox">tag 3
                 </label>
               </div>
             </div>
@@ -151,6 +151,49 @@
           <h1 class="page-header">New memo</h1>
           <form role="form" class="form-horizontal">
             <div class="form-group">
+              <label for="selectNote" class="col-sm-2 control-label">Note</label>
+              <div class="col-sm-10">
+                <select id="selectNote" class="form-control">
+                  <option>note 1</option>
+                  <option>note 2</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Tag</label>
+              <div class="col-sm-10 tag-container">
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+                <button data-toggle="button" class="btn btn-success">tag 3</button>
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+                <button data-toggle="button" class="btn btn-success">tag 3</button>
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+                <button data-toggle="button" class="btn btn-success">tag 3</button>
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+                <button data-toggle="button" class="btn btn-success">tag 3</button>
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+                <button data-toggle="button" class="btn btn-success">tag 3</button>
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+                <button data-toggle="button" class="btn btn-success">tag 3</button>
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+                <button data-toggle="button" class="btn btn-success">tag 3</button>
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+                <button data-toggle="button" class="btn btn-success">tag 3</button>
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+                <button data-toggle="button" class="btn btn-success">tag 3</button>
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+              </div>
+            </div>
+            <div class="form-group">
               <label for="inputTitle" class="col-sm-2 control-label">Title</label>
               <div class="col-sm-10">
                 <input id="inputTitle" type="text" placeholder="Title" autofocus="" class="form-control">
@@ -176,6 +219,49 @@
         <div class="col-lg-12">
           <h1 class="page-header">Memo detail</h1>
           <form role="form" class="form-horizontal">
+            <div class="form-group">
+              <label for="selectNote" class="col-sm-2 control-label">Note</label>
+              <div class="col-sm-10">
+                <select id="selectNote" class="form-control">
+                  <option>note 1</option>
+                  <option>note 2</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Tag</label>
+              <div class="col-sm-10 tag-container">
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+                <button data-toggle="button" class="btn btn-success">tag 3</button>
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+                <button data-toggle="button" class="btn btn-success">tag 3</button>
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+                <button data-toggle="button" class="btn btn-success">tag 3</button>
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+                <button data-toggle="button" class="btn btn-success">tag 3</button>
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+                <button data-toggle="button" class="btn btn-success">tag 3</button>
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+                <button data-toggle="button" class="btn btn-success">tag 3</button>
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+                <button data-toggle="button" class="btn btn-success">tag 3</button>
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+                <button data-toggle="button" class="btn btn-success">tag 3</button>
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+                <button data-toggle="button" class="btn btn-success">tag 3</button>
+                <button data-toggle="button" class="btn btn-success">tag 1</button>
+                <button data-toggle="button" class="btn btn-success">tag 2</button>
+              </div>
+            </div>
             <div class="form-group">
               <label for="inputTodo" class="col-sm-2 control-label">Todo</label>
               <div class="col-sm-10">

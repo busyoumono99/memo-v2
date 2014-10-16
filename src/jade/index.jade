@@ -101,29 +101,29 @@ html(lang="ja")
             .inner
               h4 Notes
               .btn-group-vertical(data-toggle='buttons')
-                label.btn.btn-success
-                  input#option1(type='radio', name='options')
+                label.btn.btn-success.active
+                  input#option1(type='radio', name='notes', checked="")
                   | All
                 label.btn.btn-success
-                  input#option2(type='radio', name='options')
-                  | Option 2
+                  input#option2(type='radio', name='notes')
+                  | Note 1
                 label.btn.btn-success
-                  input#option3(type='radio', name='options')
-                  | Option 3
+                  input#option3(type='radio', name='notes')
+                  | Note 2
 
           .sidebar-nav.navbar-collapse
             .inner
               h4 Tags
               div.btn-group-vertical(data-toggle='buttons')
                 label.btn.btn-success
-                  input(type='checkbox', checked='')
-                  | Option 1
+                  input(type='checkbox')
+                  | tag 1
                 label.btn.btn-success
                   input(type='checkbox')
-                  | Option 2
+                  | tag 2
                 label.btn.btn-success
                   input(type='checkbox')
-                  | Option 3
+                  | tag 3
           // /.sidebar-collapse
         // /.navbar-static-side
 
@@ -195,6 +195,44 @@ html(lang="ja")
 
                 form.form-horizontal(role='form')
                   .form-group
+                    label.col-sm-2.control-label(for='selectNote') Note
+                    .col-sm-10
+                      select#selectNote.form-control
+                        option note 1
+                        option note 2
+                  .form-group
+                    label.col-sm-2.control-label Tag
+                    .col-sm-10.tag-container
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+                      button.btn.btn-success(data-toggle='button') tag 3
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+                      button.btn.btn-success(data-toggle='button') tag 3
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+                      button.btn.btn-success(data-toggle='button') tag 3
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+                      button.btn.btn-success(data-toggle='button') tag 3
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+                      button.btn.btn-success(data-toggle='button') tag 3
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+                      button.btn.btn-success(data-toggle='button') tag 3
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+                      button.btn.btn-success(data-toggle='button') tag 3
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+                      button.btn.btn-success(data-toggle='button') tag 3
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+                      button.btn.btn-success(data-toggle='button') tag 3
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+                  .form-group
                     label.col-sm-2.control-label(for='inputTitle') Title
                     .col-sm-10
                       input#inputTitle.form-control(type='text', placeholder='Title', autofocus='')
@@ -218,6 +256,45 @@ html(lang="ja")
                 h1.page-header Memo detail
 
                 form.form-horizontal(role='form')
+                  .form-group
+                    label.col-sm-2.control-label(for='selectNote') Note
+                    .col-sm-10
+                      select#selectNote.form-control
+                        option note 1
+                        option note 2
+                  .form-group
+                    label.col-sm-2.control-label Tag
+                    .col-sm-10.tag-container
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+                      button.btn.btn-success(data-toggle='button') tag 3
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+                      button.btn.btn-success(data-toggle='button') tag 3
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+                      button.btn.btn-success(data-toggle='button') tag 3
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+                      button.btn.btn-success(data-toggle='button') tag 3
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+                      button.btn.btn-success(data-toggle='button') tag 3
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+                      button.btn.btn-success(data-toggle='button') tag 3
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+                      button.btn.btn-success(data-toggle='button') tag 3
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+                      button.btn.btn-success(data-toggle='button') tag 3
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+                      button.btn.btn-success(data-toggle='button') tag 3
+                      button.btn.btn-success(data-toggle='button') tag 1
+                      button.btn.btn-success(data-toggle='button') tag 2
+
                   .form-group
                     label.col-sm-2.control-label(for='inputTodo') Todo
                     .col-sm-10
