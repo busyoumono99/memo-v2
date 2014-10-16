@@ -13,21 +13,19 @@
     <link href="assets/sb-admin-2/css/sb-admin-2.css" rel="stylesheet">
     <link href="assets/sb-admin-2/css/plugins/morris.css" rel="stylesheet">
     <link href="assets/sb-admin-2/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div class="body-wrap">
-      <nav role="navigation" style="margin-bottom: 0" class="navbar navbar-default navbar-static-top">
+      <nav role="navigation" style="margin-bottom: 0" class="navbar navbar-inverse navbar-static-top">
         <div class="navbar-header">
           <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="index.html" class="navbar-brand">Memo-v2</a>
         </div>
         <!-- /.navbar-header-->
         <ul class="nav navbar-top-links navbar-right">
-          <li class="dropdown"><a data-toggle="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-user fa-fw"></i><i class="fa fa-caret-down"></i></a>
+          <li class="dropdown"><a data-toggle="dropdown" href="#" class="dropdown-toggle"><span>About </span><i class="fa fa-caret-down"></i></a>
             <ul class="dropdown-menu dropdown-user">
-              <li><a href="#"><i class="fa fa-user fa-fw"></i>User Profile</a></li>
-              <li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a></li>
-              <li class="divider"></li>
-              <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>Logout</a></li>
+              <li><a href="#"><i class="fa fa-plus fa-fw"></i>New memo</a></li>
             </ul>
             <!-- /.dropdown-user-->
           </li>
@@ -37,57 +35,37 @@
         <div role="navigation" class="navbar-default sidebar">
           <div class="sidebar-nav navbar-collapse">
             <ul id="side-menu" class="nav">
-              <li class="sidebar-search">
-                <div class="input-group custom-search-form">
-                  <input type="text" placeholder="Search..." class="form-control"><span class="input-group-btn">
-                    <button type="button" class="btn btn-default"><i class="fa fa-search"></i></button></span>
-                </div>
-                <!-- /input-group-->
-              </li>
-              <li><a href="index.html" class="active"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a></li>
-              <li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Charts<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                  <li><a href="flot.html">Flot Charts</a></li>
-                  <li><a href="morris.html">Morris.js Charts</a></li>
-                </ul>
-                <!-- /.nav-second-level-->
-              </li>
-              <li><a href="tables.html"><i class="fa fa-table fa-fw"></i>Tables</a></li>
-              <li><a href="forms.html"><i class="fa fa-edit fa-fw"></i>Forms</a></li>
-              <li><a href="#"><i class="fa fa-wrench fa-fw"></i>UI Elements<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                  <li><a href="panels-wells.html">Panels and Wells</a></li>
-                  <li><a href="buttons.html">Buttons</a></li>
-                  <li><a href="notifications.html">Notifications</a></li>
-                  <li><a href="typography.html">Typography</a></li>
-                  <li><a href="grid.html">Grid</a></li>
-                </ul>
-                <!-- /.nav-second-level-->
-              </li>
-              <li><a href="#"><i class="fa fa-sitemap fa-fw"></i>Multi-Level Dropdown<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                  <li><a href="#">Second Level Item</a></li>
-                  <li><a href="#">Second Level Item</a></li>
-                  <li><a href="#">Third Level<span class="fa arrow"></span></a>
-                    <ul class="nav nav-third-level">
-                      <li><a href="#">Third Level Item</a></li>
-                      <li><a href="#">Third Level Item</a></li>
-                      <li><a href="#">Third Level Item</a></li>
-                      <li><a href="#">Third Level Item</a></li>
-                    </ul>
-                    <!-- /.nav-third-level-->
-                  </li>
-                </ul>
-                <!-- /.nav-second-level-->
-              </li>
-              <li><a href="#"><i class="fa fa-files-o fa-fw"></i>Sample Pages<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                  <li><a href="blank.html">Blank Page</a></li>
-                  <li><a href="login.html">Login Page</a></li>
-                </ul>
-                <!-- /.nav-second-level-->
-              </li>
+              <li><a href="#"><i class="fa fa-plus fa-fw"></i>New memo</a></li>
             </ul>
+          </div>
+          <!-- /.sidebar-collapse-->
+          <div class="sidebar-nav navbar-collapse">
+            <h4>Notes</h4>
+            <div data-toggle="buttons" class="btn-group-vertical">
+              <label class="btn btn-default">
+                <input id="option1" type="radio" name="options">All
+              </label>
+              <label class="btn btn-default">
+                <input id="option2" type="radio" name="options">Option 2
+              </label>
+              <label class="btn btn-default">
+                <input id="option3" type="radio" name="options">Option 3
+              </label>
+            </div>
+          </div>
+          <div class="sidebar-nav navbar-collapse">
+            <h4>Tags</h4>
+            <div data-toggle="buttons" class="btn-group-vertical">
+              <label class="btn btn-default">
+                <input type="checkbox" checked="">Option 1
+              </label>
+              <label class="btn btn-default">
+                <input type="checkbox">Option 2
+              </label>
+              <label class="btn btn-default">
+                <input type="checkbox">Option 3
+              </label>
+            </div>
           </div>
           <!-- /.sidebar-collapse-->
         </div>
@@ -97,7 +75,7 @@
     <div id="page-wrapper">
       <div class="row">
         <div class="col-lg-12">
-          <h1 class="page-header">main</h1>
+          <h1 class="page-header">List</h1>
         </div>
       </div>
     </div>
