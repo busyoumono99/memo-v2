@@ -44,18 +44,51 @@ html(lang="ja")
           a.navbar-brand(href='index.html') Memo-v2
         // /.navbar-header
         ul.nav.navbar-top-links.navbar-right
+
           li.dropdown
             a.dropdown-toggle(data-toggle='dropdown', href='#')
-              span About 
+              span About
               i.fa.fa-caret-down
-            ul.dropdown-menu.dropdown-user
+            ul.dropdown-menu.dropdown-messages
               li
                 a(href='#')
-                  i.fa.fa-plus.fa-fw
-                  | New memo
-            // /.dropdown-user
+                  div
+                    strong John Smith
+                    span.pull-right.text-muted
+                      em Yesterday
+                  div
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...
+              li.divider
+              li
+                a(href='#')
+                  div
+                    strong John Smith
+                    span.pull-right.text-muted
+                      em Yesterday
+                  div
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...
+              li.divider
+              li
+                a(href='#')
+                  div
+                    strong John Smith
+                    span.pull-right.text-muted
+                      em Yesterday
+                  div
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...
+              li.divider
+              li
+                a.text-center(href='#')
+                  strong Read All Messages
+                  i.fa.fa-angle-right
+            // /.dropdown-messages
+
+
+
+
           // /.dropdown
         // /.navbar-top-links
+
         .navbar-default.sidebar(role='navigation')
           .sidebar-nav.navbar-collapse
             ul#side-menu.nav
@@ -65,30 +98,32 @@ html(lang="ja")
                   | New memo
           // /.sidebar-collapse
           .sidebar-nav.navbar-collapse
-            h4 Notes
-            .btn-group-vertical(data-toggle='buttons')
-              label.btn.btn-default
-                input#option1(type='radio', name='options')
-                | All
-              label.btn.btn-default
-                input#option2(type='radio', name='options')
-                | Option 2
-              label.btn.btn-default
-                input#option3(type='radio', name='options')
-                | Option 3
+            .inner
+              h4 Notes
+              .btn-group-vertical(data-toggle='buttons')
+                label.btn.btn-success
+                  input#option1(type='radio', name='options')
+                  | All
+                label.btn.btn-success
+                  input#option2(type='radio', name='options')
+                  | Option 2
+                label.btn.btn-success
+                  input#option3(type='radio', name='options')
+                  | Option 3
 
           .sidebar-nav.navbar-collapse
-            h4 Tags
-            div.btn-group-vertical(data-toggle='buttons')
-              label.btn.btn-default
-                input(type='checkbox', checked='')
-                | Option 1
-              label.btn.btn-default
-                input(type='checkbox')
-                | Option 2
-              label.btn.btn-default
-                input(type='checkbox')
-                | Option 3
+            .inner
+              h4 Tags
+              div.btn-group-vertical(data-toggle='buttons')
+                label.btn.btn-success
+                  input(type='checkbox', checked='')
+                  | Option 1
+                label.btn.btn-success
+                  input(type='checkbox')
+                  | Option 2
+                label.btn.btn-success
+                  input(type='checkbox')
+                  | Option 3
           // /.sidebar-collapse
         // /.navbar-static-side
 
