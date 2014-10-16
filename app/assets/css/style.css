@@ -1,3 +1,16 @@
 
+/* ---------------------------------- */
+/* nav side                           */
+/* ---------------------------------- */
 .sidebar-nav .inner { padding: 10px 15px;}
 .btn-group-vertical { width: 100%;}
+
+/* ---------------------------------- */
+/* List                               */
+/* ---------------------------------- */
+#list-table label { display: block;font-weight: normal;}
+#list-table th { text-align: center;}
+#list-table .no { width: 5%; text-align: center;}
+#list-table .todo { width: 5%; text-align: center;}
+#list-table .title { width: 30%;}
+/*#list-table .content { width: 10%;}*/
