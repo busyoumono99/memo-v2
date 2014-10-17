@@ -23,12 +23,35 @@ require.config
 			exports: 'Sb_admin_2'
 
 require [
-	'backbone'
-	'backbone-relational-amd'
+	'models/memo'
+	'models/tag'
 	'bootstrap'
 	'metisMenu'
 	'sb_admin_2'
-], (Backbone) ->
-	test_model = new Backbone.RelationalModel()
-	console.log test_model
+], (Memo, Tag) ->
+	memo = new Memo({id:3})
+	memo.fetch().then(->
+		console.log memo
+		note = memo.get("note")
+		console.log  note
+		console.log  note.url()
+		console.log  note.get("name")
+		tags = memo.get("tags")
+		console.log tags
+		# console.log JSON.stringify(memo.toJSON())
+		console.log tags.url()
+		tag = tags.get(1)
+		console.log tag.url()
+		console.log tag.get("name")
+
+		memo2 = new Memo()
+		memo2.set
+			title: "test4"
+			content: 'test4'
+			note_id: note.get('id')
+			tags: tags
+		memo2.save()
+
+		console.log memo2
+	)
 	return

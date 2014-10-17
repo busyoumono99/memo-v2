@@ -27,8 +27,32 @@ require.config({
   }
 });
 
-require(['backbone', 'backbone-relational-amd', 'bootstrap', 'metisMenu', 'sb_admin_2'], function(Backbone) {
-  var test_model;
-  test_model = new Backbone.RelationalModel();
-  console.log(test_model);
+require(['models/memo', 'models/tag', 'bootstrap', 'metisMenu', 'sb_admin_2'], function(Memo, Tag) {
+  var memo;
+  memo = new Memo({
+    id: 3
+  });
+  memo.fetch().then(function() {
+    var memo2, note, tag, tags;
+    console.log(memo);
+    note = memo.get("note");
+    console.log(note);
+    console.log(note.url());
+    console.log(note.get("name"));
+    tags = memo.get("tags");
+    console.log(tags);
+    console.log(tags.url());
+    tag = tags.get(1);
+    console.log(tag.url());
+    console.log(tag.get("name"));
+    memo2 = new Memo();
+    memo2.set({
+      title: "test4",
+      content: 'test4',
+      note_id: note.get('id'),
+      tags: tags
+    });
+    memo2.save();
+    return console.log(memo2);
+  });
 });
