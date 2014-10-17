@@ -4,6 +4,7 @@ require.config({
     jquery: '../bower_components/jquery/jquery',
     underscore: '../bower_components/underscore/underscore',
     backbone: '../bower_components/backbone/backbone',
+    'backbone-relational-amd': '../bower_components/backbone-relational-amd/backbone-relational',
     marionette: '../bower_components/marionette/lib/backbone.marionette',
     text: '../bower_components/requirejs-text/text',
     bootstrap: '../bower_components/bootstrap/dist/js/bootstrap',
@@ -26,4 +27,8 @@ require.config({
   }
 });
 
-require(['bootstrap', 'metisMenu', 'sb_admin_2'], function() {});
+require(['backbone', 'backbone-relational-amd', 'bootstrap', 'metisMenu', 'sb_admin_2'], function(Backbone) {
+  var test_model;
+  test_model = new Backbone.RelationalModel();
+  console.log(test_model);
+});

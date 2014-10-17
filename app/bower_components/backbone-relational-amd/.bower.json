@@ -1,0 +1,14 @@
+{
+  "name": "backbone-relational-amd",
+  "homepage": "https://github.com/martinhoefling/Backbone-relational",
+  "version": "0.8.7",
+  "_release": "0.8.7",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.8.7",
+    "commit": "cd59deba5557871d2c5fb0f9ca8af51d9643ac1c"
+  },
+  "_source": "git://github.com/martinhoefling/Backbone-relational.git",
+  "_target": "~0",
+  "_originalSource": "backbone-relational-amd"
+}
