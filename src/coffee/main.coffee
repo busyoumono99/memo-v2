@@ -19,39 +19,48 @@ require.config
 			deps: ['bootstrap']
 			exports: 'MetisMenu'
 		sb_admin_2:
-			deps: ['bootstrap']
+			deps: ['bootstrap', 'metisMenu']
 			exports: 'Sb_admin_2'
 
 require [
 	'models/memo'
-	'models/tag'
+	'collections/memos'
+	'collections/notes'
+	'collections/tags'
 	'bootstrap'
 	'metisMenu'
 	'sb_admin_2'
-], (Memo, Tag) ->
-	memo = new Memo({id:3})
-	memo.fetch().then(->
-		console.log memo
-		note = memo.get("note")
-		console.log  note
-		console.log  note.url()
-		console.log  note.get("name")
-		tags = memo.get("tags")
-		console.log tags
-		# console.log JSON.stringify(memo.toJSON())
-		console.log tags.url()
-		tag = tags.get(1)
-		console.log tag.url()
-		console.log tag.get("name")
-
-		memo2 = new Memo()
-		memo2.set
-			title: "test4"
-			content: 'test4'
-			note_id: note.get('id')
-			tags: tags
-		memo2.save()
-
-		console.log memo2
+], (Memo, Memos, Notes, Tags) ->
+	memos = new Memos()
+	memos.fetch().then(->
+		# console.log memos
+		# console.log memos.toJSON()
+		memo1 = memos.at(0)
+		console.log memo1
+		memo1.fetch().done(->
+			console.log memo1.toJSON()
+			tags1 = memo1.get("tags")
+			console.log tags1
+			console.log tags1.url()
+			tag = tags1.get(1)
+			console.log tag
+			console.log tag.url()
+			console.log tag.get("name")
+			return
+		)
+		return
 	)
+
+	notes = new Notes()
+	notes.fetch().done ->
+		console.log notes
+		return
+
+	tags = new Tags()
+	tags.fetch().done ->
+		console.log tags
+		return
+
 	return
+
+

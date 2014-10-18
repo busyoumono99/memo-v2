@@ -21,38 +21,37 @@ require.config({
       exports: 'MetisMenu'
     },
     sb_admin_2: {
-      deps: ['bootstrap'],
+      deps: ['bootstrap', 'metisMenu'],
       exports: 'Sb_admin_2'
     }
   }
 });
 
-require(['models/memo', 'models/tag', 'bootstrap', 'metisMenu', 'sb_admin_2'], function(Memo, Tag) {
-  var memo;
-  memo = new Memo({
-    id: 3
-  });
-  memo.fetch().then(function() {
-    var memo2, note, tag, tags;
-    console.log(memo);
-    note = memo.get("note");
-    console.log(note);
-    console.log(note.url());
-    console.log(note.get("name"));
-    tags = memo.get("tags");
-    console.log(tags);
-    console.log(tags.url());
-    tag = tags.get(1);
-    console.log(tag.url());
-    console.log(tag.get("name"));
-    memo2 = new Memo();
-    memo2.set({
-      title: "test4",
-      content: 'test4',
-      note_id: note.get('id'),
-      tags: tags
+require(['models/memo', 'collections/memos', 'collections/notes', 'collections/tags', 'bootstrap', 'metisMenu', 'sb_admin_2'], function(Memo, Memos, Notes, Tags) {
+  var memos, notes, tags;
+  memos = new Memos();
+  memos.fetch().then(function() {
+    var memo1;
+    memo1 = memos.at(0);
+    console.log(memo1);
+    memo1.fetch().done(function() {
+      var tag, tags1;
+      console.log(memo1.toJSON());
+      tags1 = memo1.get("tags");
+      console.log(tags1);
+      console.log(tags1.url());
+      tag = tags1.get(1);
+      console.log(tag);
+      console.log(tag.url());
+      console.log(tag.get("name"));
     });
-    memo2.save();
-    return console.log(memo2);
+  });
+  notes = new Notes();
+  notes.fetch().done(function() {
+    console.log(notes);
+  });
+  tags = new Tags();
+  tags.fetch().done(function() {
+    console.log(tags);
   });
 });

@@ -12,6 +12,11 @@ define(['backbone', 'models/tag'], function(Backbone, Tag) {
     },
     model: Tag,
     parse: function(response) {
+      console.log('in Tags.parse()');
+      console.log(response);
+      if (response.tags != null) {
+        return response.tags;
+      }
       return response;
     }
   });

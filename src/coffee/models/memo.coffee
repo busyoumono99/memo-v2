@@ -22,7 +22,7 @@ define [
 			key: 'note'
 			relatedModel: Note
 			reverseRelation:
-				key: 'memo'
+				key: 'memos'
 				includeInJSON: false
 			},
 			{
@@ -31,7 +31,7 @@ define [
 			relatedModel: Tag
 			collectionType: Tags
 			reverseRelation:
-				key: 'memo'
+				key: 'memos'
 				includeInJSON: false
 			}
 		]
@@ -39,7 +39,7 @@ define [
 			result = null
 			# console.log 'in memo parse'
 			# console.log response
-			if response.memos[0]?
+			if response.memos?[0]?
 				result = response.memos[0]
 			else
 				result = response

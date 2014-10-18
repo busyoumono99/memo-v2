@@ -15,7 +15,7 @@ define(['backbone', 'models/note', 'models/tag', 'collections/tags', 'backbone-r
         key: 'note',
         relatedModel: Note,
         reverseRelation: {
-          key: 'memo',
+          key: 'memos',
           includeInJSON: false
         }
       }, {
@@ -24,15 +24,15 @@ define(['backbone', 'models/note', 'models/tag', 'collections/tags', 'backbone-r
         relatedModel: Tag,
         collectionType: Tags,
         reverseRelation: {
-          key: 'memo',
+          key: 'memos',
           includeInJSON: false
         }
       }
     ],
     parse: function(response) {
-      var result;
+      var result, _ref;
       result = null;
-      if (response.memos[0] != null) {
+      if (((_ref = response.memos) != null ? _ref[0] : void 0) != null) {
         result = response.memos[0];
       } else {
         result = response;

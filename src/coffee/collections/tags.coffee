@@ -11,8 +11,10 @@ define [
 			'../../data.memo/tags' + created
 		model: Tag
 		parse: (response) ->
-			# console.log 'in Tags.parse()'
-			# console.log response
+			console.log 'in Tags.parse()'
+			console.log response
+			if response.tags?
+				return response.tags
 			response
 
 	Tags
