@@ -2,6 +2,12 @@ define(['backbone', 'models/note', 'models/tag', 'collections/tags', 'backbone-r
   'use strict';
   var Memo;
   Memo = Backbone.RelationalModel.extend({
+    defaults: {
+      title: '',
+      content: '',
+      completed: 0,
+      display_sort: 0
+    },
     urlRoot: '../../data.memo/memos',
     relations: [
       {

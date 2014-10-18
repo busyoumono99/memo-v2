@@ -8,6 +8,12 @@ define [
 	'use strict'
 
 	Memo = Backbone.RelationalModel.extend
+		defaults:
+			title: ''
+			content: ''
+			completed: 0
+			display_sort: 0
+
 		urlRoot: '../../data.memo/memos'
 
 		relations: [
