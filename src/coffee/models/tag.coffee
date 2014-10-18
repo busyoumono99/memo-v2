@@ -5,6 +5,9 @@ define [
 	'use strict'
 
 	Tag = Backbone.RelationalModel.extend
+		defaults:
+			name: ''
+			is_active: 0
 		parse: (response) ->
 			# console.log 'in Tag.parse()'
 			# console.log response
