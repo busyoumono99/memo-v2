@@ -44,52 +44,62 @@
           <!-- /.dropdown-->
         </ul>
         <!-- /.navbar-top-links-->
-        <div role="navigation" class="navbar-default sidebar">
-          <div class="sidebar-nav navbar-collapse">
-            <ul class="nav">
-              <li><a href="#"><i class="fa fa-th-list fa-fw fa-lg"></i> Memo list</a></li>
-              <li><a href="#/add"><i class="fa fa-plus fa-fw fa-lg"></i> New memo</a></li>
-              <li><a href="#/note_mgr"><i class="fa fa-book fa-fw fa-lg"></i> Note mgr</a></li>
-              <li><a href="#/tag_mgr"><i class="fa fa-tags fa-fw fa-lg"></i> Tag mgr</a></li>
-            </ul>
-          </div>
-          <!-- /.sidebar-collapse-->
-          <div class="sidebar-nav navbar-collapse">
-            <div class="inner">
-              <h3>Search</h3>
-              <h4>Notes</h4>
-              <div data-toggle="buttons" class="btn-group-vertical">
-                <label class="btn btn-success active">
-                  <input id="option1" type="radio" name="notes" checked="">All
-                </label>
-                <label class="btn btn-success">
-                  <input id="option2" type="radio" name="notes">Note 1
-                </label>
-                <label class="btn btn-success">
-                  <input id="option3" type="radio" name="notes">Note 2
-                </label>
+        <div id="sidebar-nav">
+          <div role="navigation" class="navbar-default sidebar">
+            <div class="sidebar-nav navbar-collapse">
+              <ul class="nav">
+                <li><a href="#"><i class="fa fa-th-list fa-fw fa-lg"></i> Memo list</a></li>
+                <li><a href="#/add"><i class="fa fa-plus fa-fw fa-lg"></i> New memo</a></li>
+                <li><a href="#/note_mgr"><i class="fa fa-book fa-fw fa-lg"></i> Note mgr</a></li>
+                <li><a href="#/tag_mgr"><i class="fa fa-tags fa-fw fa-lg"></i> Tag mgr</a></li>
+              </ul>
+            </div>
+            <!-- /.sidebar-collapse-->
+            <div class="sidebar-nav navbar-collapse">
+              <div class="inner">
+                <h3>Search</h3>
               </div>
             </div>
-          </div>
-          <div class="sidebar-nav navbar-collapse">
-            <div class="inner">
-              <h4>Tags</h4>
-              <div data-toggle="buttons" class="btn-group-vertical">
-                <label class="btn btn-success">
-                  <input type="checkbox">tag 1
-                </label>
-                <label class="btn btn-success">
-                  <input type="checkbox">tag 2
-                </label>
-                <label class="btn btn-success">
-                  <input type="checkbox">tag 3
-                </label>
+            <div id="note-list">
+              <div class="sidebar-nav navbar-collapse">
+                <div class="inner">
+                  <h4>Notes</h4>
+                  <div data-toggle="buttons" class="btn-group-vertical">
+                    <label class="btn btn-success active">
+                      <input id="option1" type="radio" name="notes" checked="">All
+                    </label>
+                    <label class="btn btn-success">
+                      <input id="option2" type="radio" name="notes">Note 1
+                    </label>
+                    <label class="btn btn-success">
+                      <input id="option3" type="radio" name="notes">Note 2
+                    </label>
+                  </div>
+                </div>
               </div>
             </div>
+            <div id="tag-list">
+              <div class="sidebar-nav navbar-collapse">
+                <div class="inner">
+                  <h4>Tags</h4>
+                  <div data-toggle="buttons" class="btn-group-vertical">
+                    <label class="btn btn-success">
+                      <input type="checkbox">tag 1
+                    </label>
+                    <label class="btn btn-success">
+                      <input type="checkbox">tag 2
+                    </label>
+                    <label class="btn btn-success">
+                      <input type="checkbox">tag 3
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.sidebar-collapse-->
           </div>
-          <!-- /.sidebar-collapse-->
+          <!-- /.navbar-static-side-->
         </div>
-        <!-- /.navbar-static-side-->
       </nav>
     </div>
     <div id="page-wrapper">
