@@ -1,6 +1,7 @@
 define(['backbone', 'backbone-relational-amd'], function(Backbone) {
   'use strict';
   var Tag;
+  console.log('run tag');
   Tag = Backbone.RelationalModel.extend({
     defaults: {
       name: '',

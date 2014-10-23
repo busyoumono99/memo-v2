@@ -3,6 +3,7 @@ define [
 	'backbone-relational-amd'
 ], (Backbone) ->
 	'use strict'
+	console.log 'run tag'
 
 	Tag = Backbone.RelationalModel.extend
 		defaults:

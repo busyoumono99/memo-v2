@@ -3,8 +3,9 @@ define [
 	'models/note'
 ], (Backbone, Note) ->
 	'use strict'
+	console.log 'run notes'
 
-	Notes = Backbone.Collection.extend
+	return Backbone.Collection.extend
 		model: Note
 		url: '../../data.memo/notes'
 		parse: (response) ->
@@ -14,4 +15,3 @@ define [
 				return response.notes
 			response
 
-	Notes

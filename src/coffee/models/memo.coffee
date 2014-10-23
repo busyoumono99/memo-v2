@@ -6,6 +6,7 @@ define [
 	'backbone-relational-amd'
 ], (Backbone, Note, Tag, Tags) ->
 	'use strict'
+	console.log 'run memos'
 
 	Memo = Backbone.RelationalModel.extend
 		defaults:

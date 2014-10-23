@@ -32,310 +32,311 @@ html(lang="ja")
 
 
   body
-    div.body-wrap
-      //- nav.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bottom: 0')
-      nav.navbar.navbar-inverse.navbar-static-top(role='navigation', style='margin-bottom: 0')
-        .navbar-header
-          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand(href='index.html') Memo-v2
-        // /.navbar-header
-        ul.nav.navbar-top-links.navbar-right
+    #main
+      //- div.body-wrap
+        //- nav.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bottom: 0')
+        nav.navbar.navbar-inverse.navbar-static-top(role='navigation', style='margin-bottom: 0')
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='index.html') Memo-v2
+          // /.navbar-header
+          ul.nav.navbar-top-links.navbar-right
 
-          li.dropdown
-            a.dropdown-toggle(data-toggle='dropdown', href='#')
-              span About
-              i.fa.fa-caret-down
-            ul.dropdown-menu.dropdown-messages
-              li
-                a(href='#')
-                  div
-                    strong John Smith
-                    span.pull-right.text-muted
-                      em Yesterday
-                  div
-                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...
-              li.divider
-              li
-                a(href='#')
-                  div
-                    strong John Smith
-                    span.pull-right.text-muted
-                      em Yesterday
-                  div
-                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...
-              li.divider
-              li
-                a(href='#')
-                  div
-                    strong John Smith
-                    span.pull-right.text-muted
-                      em Yesterday
-                  div
-                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...
-              li.divider
-              li
-                a.text-center(href='#')
-                  strong Read All Messages
-                  i.fa.fa-angle-right
-            // /.dropdown-messages
-
-
-
-
-          // /.dropdown
-        // /.navbar-top-links
-
-        #sidebar-nav
-          .navbar-default.sidebar(role='navigation')
-            .sidebar-nav.navbar-collapse
-              ul.nav
+            li.dropdown
+              a.dropdown-toggle(data-toggle='dropdown', href='#')
+                span About
+                i.fa.fa-caret-down
+              ul.dropdown-menu.dropdown-messages
                 li
                   a(href='#')
-                    i.fa.fa-th-list.fa-fw.fa-lg
-                    |  Memo list
+                    div
+                      strong John Smith
+                      span.pull-right.text-muted
+                        em Yesterday
+                    div
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...
+                li.divider
                 li
-                  a(href='#/add')
-                    i.fa.fa-plus.fa-fw.fa-lg
-                    |  New memo
+                  a(href='#')
+                    div
+                      strong John Smith
+                      span.pull-right.text-muted
+                        em Yesterday
+                    div
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...
+                li.divider
                 li
-                  a(href='#/note_mgr')
-                    i.fa.fa-book.fa-fw.fa-lg
-                    |  Note mgr
+                  a(href='#')
+                    div
+                      strong John Smith
+                      span.pull-right.text-muted
+                        em Yesterday
+                    div
+                      | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...
+                li.divider
                 li
-                  a(href='#/tag_mgr')
-                    i.fa.fa-tags.fa-fw.fa-lg
-                    |  Tag mgr
-            // /.sidebar-collapse
-            .sidebar-nav.navbar-collapse
-              .inner
-                h3 Search
-            #note-list
+                  a.text-center(href='#')
+                    strong Read All Messages
+                    i.fa.fa-angle-right
+              // /.dropdown-messages
+
+
+
+
+            // /.dropdown
+          // /.navbar-top-links
+
+          #sidebar-nav
+            .navbar-default.sidebar(role='navigation')
+              .sidebar-nav.navbar-collapse
+                ul.nav
+                  li
+                    a(href='#')
+                      i.fa.fa-th-list.fa-fw.fa-lg
+                      |  Memo list
+                  li
+                    a(href='#/add')
+                      i.fa.fa-plus.fa-fw.fa-lg
+                      |  New memo
+                  li
+                    a(href='#/note_mgr')
+                      i.fa.fa-book.fa-fw.fa-lg
+                      |  Note mgr
+                  li
+                    a(href='#/tag_mgr')
+                      i.fa.fa-tags.fa-fw.fa-lg
+                      |  Tag mgr
+              // /.sidebar-collapse
               .sidebar-nav.navbar-collapse
                 .inner
-                    h4 Notes
-                    .btn-group-vertical(data-toggle='buttons')
-                      label.btn.btn-success.active
-                        input#option1(type='radio', name='notes', checked="")
-                        | All
+                  h3 Search
+              #note-list
+                .sidebar-nav.navbar-collapse
+                  .inner
+                      h4 Notes
+                      .btn-group-vertical(data-toggle='buttons')
+                        label.btn.btn-success.active
+                          input#option1(type='radio', name='notes', checked="")
+                          | All
+                        label.btn.btn-success
+                          input#option2(type='radio', name='notes')
+                          | Note 1
+                        label.btn.btn-success
+                          input#option3(type='radio', name='notes')
+                          | Note 2
+              #tag-list
+                .sidebar-nav.navbar-collapse
+                  .inner
+                    h4 Tags
+                    div.btn-group-vertical(data-toggle='buttons')
                       label.btn.btn-success
-                        input#option2(type='radio', name='notes')
-                        | Note 1
+                        input(type='checkbox')
+                        | tag 1
                       label.btn.btn-success
-                        input#option3(type='radio', name='notes')
-                        | Note 2
-            #tag-list
-              .sidebar-nav.navbar-collapse
-                .inner
-                  h4 Tags
-                  div.btn-group-vertical(data-toggle='buttons')
-                    label.btn.btn-success
-                      input(type='checkbox')
-                      | tag 1
-                    label.btn.btn-success
-                      input(type='checkbox')
-                      | tag 2
-                    label.btn.btn-success
-                      input(type='checkbox')
-                      | tag 3
-            // /.sidebar-collapse
-          // /.navbar-static-side
+                        input(type='checkbox')
+                        | tag 2
+                      label.btn.btn-success
+                        input(type='checkbox')
+                        | tag 3
+              // /.sidebar-collapse
+            // /.navbar-static-side
 
 
 
 
-    div#page-wrapper
-        div.row
-            div.col-lg-12
-                h1.page-header Memo list
+      //- div#page-wrapper
+          div.row
+              div.col-lg-12
+                  h1.page-header Memo list
 
-                table#list-table.table.table-striped.table-bordered.table-hover
-                  thead
-                    tr
-                      th.no #
-                      th.todo todo
-                      th.title title
-                      th.content content
-                      th.func func
-                  tbody
-                    tr
-                      td.no 1
-                      td.todo
-                        input#memo-112(type='checkbox', checked='')
-                      td.title
-                        label(for="memo-112") title1
-                      td.content
-                        label(for="memo-112") content1
-                      td.func
-                          a.btn.btn-default(href='#/edit/112')
-                            i.fa.fa-pencil-square-o
-                          | &nbsp;&nbsp;
-                          a.btn.btn-danger
+                  table#list-table.table.table-striped.table-bordered.table-hover
+                    thead
+                      tr
+                        th.no #
+                        th.todo todo
+                        th.title title
+                        th.content content
+                        th.func func
+                    tbody
+                      tr
+                        td.no 1
+                        td.todo
+                          input#memo-112(type='checkbox', checked='')
+                        td.title
+                          label(for="memo-112") title1
+                        td.content
+                          label(for="memo-112") content1
+                        td.func
+                            a.btn.btn-default(href='#/edit/112')
+                              i.fa.fa-pencil-square-o
+                            | &nbsp;&nbsp;
+                            a.btn.btn-danger
+                              i.fa.fa-trash-o
+                      tr
+                        td.no 2
+                        td.todo
+                          input#memo-114(type='checkbox', checked='')
+                        td.title
+                          label(for="memo-114") title2
+                        td.content
+                          label(for="memo-114") content2
+                        td.func
+                            a.btn.btn-default(href='#/edit/112')
+                              i.fa.fa-pencil-square-o
+                            | &nbsp;&nbsp;
+                            a.btn.btn-danger
+                              i.fa.fa-trash-o
+                      tr
+                        td.no 3
+                        td.todo
+                          input#memo-115(type='checkbox', checked='')
+                        td.title
+                          label(for="memo-115") title3
+                        td.content
+                          label(for="memo-115") content3
+                        td.func
+                            a.btn.btn-default(href='#/edit/112')
+                              i.fa.fa-pencil-square-o
+                            | &nbsp;&nbsp;
+                            a.btn.btn-danger
+                              i.fa.fa-trash-o
+
+
+
+          div.row
+              div.col-lg-12
+                  h1.page-header New memo
+
+                  form.form-horizontal(role='form')
+                    .form-group
+                      label.col-sm-2.control-label(for='selectNote') Note
+                      .col-sm-10
+                        select#selectNote.form-control
+                          option note 1
+                          option note 2
+                    .form-group
+                      label.col-sm-2.control-label Tag
+                      .col-sm-10.tag-container
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+                        button.btn.btn-success(data-toggle='button') tag 3
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+                        button.btn.btn-success(data-toggle='button') tag 3
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+                        button.btn.btn-success(data-toggle='button') tag 3
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+                        button.btn.btn-success(data-toggle='button') tag 3
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+                        button.btn.btn-success(data-toggle='button') tag 3
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+                        button.btn.btn-success(data-toggle='button') tag 3
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+                        button.btn.btn-success(data-toggle='button') tag 3
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+                        button.btn.btn-success(data-toggle='button') tag 3
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+                        button.btn.btn-success(data-toggle='button') tag 3
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+                    .form-group
+                      label.col-sm-2.control-label(for='inputTitle') Title
+                      .col-sm-10
+                        input#inputTitle.form-control(type='text', placeholder='Title', autofocus='')
+                    .form-group
+                      label.col-sm-2.control-label(for='inputContent') Content
+                      .col-sm-10
+                        input#inputContent.form-control(type='text', placeholder='Content')
+                    .form-group
+                      .col-sm-offset-2.col-sm-10
+                        .btn-group
+                          button.btn.btn-primary.btn-lg(type='button')
+                            i.fa.fa-floppy-o
+                            span &nbsp;Save
+                          a.btn.btn-default.btn-lg(href='#')
+                            i.fa.fa-arrow-circle-up
+                            span &nbsp;Cancel
+
+
+          div.row
+              div.col-lg-12
+                  h1.page-header Memo detail
+
+                  form.form-horizontal(role='form')
+                    .form-group
+                      label.col-sm-2.control-label(for='selectNote') Note
+                      .col-sm-10
+                        select#selectNote.form-control
+                          option note 1
+                          option note 2
+                    .form-group
+                      label.col-sm-2.control-label Tag
+                      .col-sm-10.tag-container
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+                        button.btn.btn-success(data-toggle='button') tag 3
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+                        button.btn.btn-success(data-toggle='button') tag 3
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+                        button.btn.btn-success(data-toggle='button') tag 3
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+                        button.btn.btn-success(data-toggle='button') tag 3
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+                        button.btn.btn-success(data-toggle='button') tag 3
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+                        button.btn.btn-success(data-toggle='button') tag 3
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+                        button.btn.btn-success(data-toggle='button') tag 3
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+                        button.btn.btn-success(data-toggle='button') tag 3
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+                        button.btn.btn-success(data-toggle='button') tag 3
+                        button.btn.btn-success(data-toggle='button') tag 1
+                        button.btn.btn-success(data-toggle='button') tag 2
+
+                    .form-group
+                      label.col-sm-2.control-label(for='inputTodo') Todo
+                      .col-sm-10
+                        input#inputTodo.form-control(type='checkbox', autofocus='')
+                    .form-group
+                      label.col-sm-2.control-label(for='inputTitle') Title
+                      .col-sm-10
+                        input#inputTitle.form-control(type='text', placeholder='Title')
+                    .form-group
+                      label.col-sm-2.control-label(for='inputContent') Content
+                      .col-sm-10
+                        input#inputContent.form-control(type='text', placeholder='Content')
+                    .form-group
+                      .col-sm-offset-2.col-sm-10
+                        .btn-group
+                          button.btn.btn-primary.btn-lg(type='button')
+                            i.fa.fa-floppy-o
+                            span &nbsp;Save
+                          a.btn.btn-default.btn-lg(href='#')
+                            i.fa.fa-arrow-circle-up
+                            span &nbsp;Cancel
+                          button.btn.btn-danger.btn-lg(type='button')
                             i.fa.fa-trash-o
-                    tr
-                      td.no 2
-                      td.todo
-                        input#memo-114(type='checkbox', checked='')
-                      td.title
-                        label(for="memo-114") title2
-                      td.content
-                        label(for="memo-114") content2
-                      td.func
-                          a.btn.btn-default(href='#/edit/112')
-                            i.fa.fa-pencil-square-o
-                          | &nbsp;&nbsp;
-                          a.btn.btn-danger
-                            i.fa.fa-trash-o
-                    tr
-                      td.no 3
-                      td.todo
-                        input#memo-115(type='checkbox', checked='')
-                      td.title
-                        label(for="memo-115") title3
-                      td.content
-                        label(for="memo-115") content3
-                      td.func
-                          a.btn.btn-default(href='#/edit/112')
-                            i.fa.fa-pencil-square-o
-                          | &nbsp;&nbsp;
-                          a.btn.btn-danger
-                            i.fa.fa-trash-o
-
-
-
-        div.row
-            div.col-lg-12
-                h1.page-header New memo
-
-                form.form-horizontal(role='form')
-                  .form-group
-                    label.col-sm-2.control-label(for='selectNote') Note
-                    .col-sm-10
-                      select#selectNote.form-control
-                        option note 1
-                        option note 2
-                  .form-group
-                    label.col-sm-2.control-label Tag
-                    .col-sm-10.tag-container
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-                      button.btn.btn-success(data-toggle='button') tag 3
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-                      button.btn.btn-success(data-toggle='button') tag 3
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-                      button.btn.btn-success(data-toggle='button') tag 3
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-                      button.btn.btn-success(data-toggle='button') tag 3
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-                      button.btn.btn-success(data-toggle='button') tag 3
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-                      button.btn.btn-success(data-toggle='button') tag 3
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-                      button.btn.btn-success(data-toggle='button') tag 3
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-                      button.btn.btn-success(data-toggle='button') tag 3
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-                      button.btn.btn-success(data-toggle='button') tag 3
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-                  .form-group
-                    label.col-sm-2.control-label(for='inputTitle') Title
-                    .col-sm-10
-                      input#inputTitle.form-control(type='text', placeholder='Title', autofocus='')
-                  .form-group
-                    label.col-sm-2.control-label(for='inputContent') Content
-                    .col-sm-10
-                      input#inputContent.form-control(type='text', placeholder='Content')
-                  .form-group
-                    .col-sm-offset-2.col-sm-10
-                      .btn-group
-                        button.btn.btn-primary.btn-lg(type='button')
-                          i.fa.fa-floppy-o
-                          span &nbsp;Save
-                        a.btn.btn-default.btn-lg(href='#')
-                          i.fa.fa-arrow-circle-up
-                          span &nbsp;Cancel
-
-
-        div.row
-            div.col-lg-12
-                h1.page-header Memo detail
-
-                form.form-horizontal(role='form')
-                  .form-group
-                    label.col-sm-2.control-label(for='selectNote') Note
-                    .col-sm-10
-                      select#selectNote.form-control
-                        option note 1
-                        option note 2
-                  .form-group
-                    label.col-sm-2.control-label Tag
-                    .col-sm-10.tag-container
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-                      button.btn.btn-success(data-toggle='button') tag 3
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-                      button.btn.btn-success(data-toggle='button') tag 3
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-                      button.btn.btn-success(data-toggle='button') tag 3
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-                      button.btn.btn-success(data-toggle='button') tag 3
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-                      button.btn.btn-success(data-toggle='button') tag 3
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-                      button.btn.btn-success(data-toggle='button') tag 3
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-                      button.btn.btn-success(data-toggle='button') tag 3
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-                      button.btn.btn-success(data-toggle='button') tag 3
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-                      button.btn.btn-success(data-toggle='button') tag 3
-                      button.btn.btn-success(data-toggle='button') tag 1
-                      button.btn.btn-success(data-toggle='button') tag 2
-
-                  .form-group
-                    label.col-sm-2.control-label(for='inputTodo') Todo
-                    .col-sm-10
-                      input#inputTodo.form-control(type='checkbox', autofocus='')
-                  .form-group
-                    label.col-sm-2.control-label(for='inputTitle') Title
-                    .col-sm-10
-                      input#inputTitle.form-control(type='text', placeholder='Title')
-                  .form-group
-                    label.col-sm-2.control-label(for='inputContent') Content
-                    .col-sm-10
-                      input#inputContent.form-control(type='text', placeholder='Content')
-                  .form-group
-                    .col-sm-offset-2.col-sm-10
-                      .btn-group
-                        button.btn.btn-primary.btn-lg(type='button')
-                          i.fa.fa-floppy-o
-                          span &nbsp;Save
-                        a.btn.btn-default.btn-lg(href='#')
-                          i.fa.fa-arrow-circle-up
-                          span &nbsp;Cancel
-                        button.btn.btn-danger.btn-lg(type='button')
-                          i.fa.fa-trash-o
-                          span &nbsp;Delete
+                            span &nbsp;Delete
 
 
 

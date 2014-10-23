@@ -3,7 +3,7 @@ define [
 	'backbone-relational-amd'
 ], (Backbone) ->
 	'use strict'
-
+	console.log 'run note'
 
 	Note = Backbone.RelationalModel.extend
 		defaults:

@@ -1,4 +1,6 @@
 'use strict';
+console.log('run config.js');
+
 require.config({
 
   /* main.jsがアプリのスタート地点 */

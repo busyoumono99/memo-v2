@@ -3,8 +3,9 @@ define [
 	'models/tag'
 ] ,(Backbone, Tag) ->
 	'use strict'
+	console.log 'run tags'
 
-	Tags = Backbone.Collection.extend
+	return Backbone.Collection.extend
 		url: ->
 			id = this.get("tag").id if this.get("tag")
 			created = if id then ("/" + id) else ''
@@ -16,5 +17,3 @@ define [
 			if response.tags?
 				return response.tags
 			response
-
-	Tags

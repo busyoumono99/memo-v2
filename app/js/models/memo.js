@@ -1,6 +1,7 @@
 define(['backbone', 'models/note', 'models/tag', 'collections/tags', 'backbone-relational-amd'], function(Backbone, Note, Tag, Tags) {
   'use strict';
   var Memo;
+  console.log('run memos');
   Memo = Backbone.RelationalModel.extend({
     defaults: {
       title: '',

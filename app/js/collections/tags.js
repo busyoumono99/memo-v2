@@ -1,7 +1,7 @@
 define(['backbone', 'models/tag'], function(Backbone, Tag) {
   'use strict';
-  var Tags;
-  Tags = Backbone.Collection.extend({
+  console.log('run tags');
+  return Backbone.Collection.extend({
     url: function() {
       var created, id;
       if (this.get("tag")) {
@@ -20,5 +20,4 @@ define(['backbone', 'models/tag'], function(Backbone, Tag) {
       return response;
     }
   });
-  return Tags;
 });

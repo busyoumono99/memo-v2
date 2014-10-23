@@ -1,7 +1,7 @@
 define(['backbone', 'models/note'], function(Backbone, Note) {
   'use strict';
-  var Notes;
-  Notes = Backbone.Collection.extend({
+  console.log('run notes');
+  return Backbone.Collection.extend({
     model: Note,
     url: '../../data.memo/notes',
     parse: function(response) {
@@ -13,5 +13,4 @@ define(['backbone', 'models/note'], function(Backbone, Note) {
       return response;
     }
   });
-  return Notes;
 });

@@ -3,8 +3,9 @@ define [
 	'models/memo'
 ], (Backbone, Memo) ->
 	'use strict'
+	console.log 'run memos'
 
-	Memos = Backbone.Collection.extend
+	return Backbone.Collection.extend
 		model: Memo
 		url: '../../data.memo/memos'
 		parse: (response)->
@@ -13,5 +14,3 @@ define [
 			if response.memos?
 				return response.memos
 			response
-
-	Memos

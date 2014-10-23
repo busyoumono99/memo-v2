@@ -1,6 +1,7 @@
 define(['backbone', 'backbone-relational-amd'], function(Backbone) {
   'use strict';
   var Note;
+  console.log('run note');
   Note = Backbone.RelationalModel.extend({
     defaults: {
       name: '',
