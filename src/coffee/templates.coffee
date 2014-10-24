@@ -10,4 +10,5 @@ define (require) ->
 		memo:
 			memo:		require 'text!templates/memo/memo.html'
 			memo_list:	require 'text!templates/memo/memo_list.html'
+			create:		require 'text!templates/memo/create.html'
 	}
