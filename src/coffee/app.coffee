@@ -12,7 +12,8 @@ define [
 	app.addRegions
 		main:	'#main'
 
-	app.on 'initialize:after', ->
+	app.on 'start', ->
+		console.log 'run app:start'
 		Backbone.history.start()
 		return
 
@@ -22,16 +23,16 @@ define [
 		return
 
 	app.addInitializer (options) ->
-		console.log options.routers
-		console.log options.routers.memo
+		# console.log options.routers
+		# console.log options.routers.memo
 		# console.log options.routers.memo.controller
 		_.each options.routers, (router) ->
 			console.log 'new router'
-			console.log router
+			# console.log router
 			# console.log router.controller
 			c = new router.c()
 			r = new router.r({ controller: c})
-			console.log r
+			# console.log r
 			return
 		# applayout = new AppLayoutView()
 		# app.main.show(applayout)

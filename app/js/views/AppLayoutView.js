@@ -1,4 +1,4 @@
-define(['underscore', 'marionette', 'templates', 'collections/notes', 'collections/tags', 'views/SideNotesView'], function(_, Marionette, templates, Notes, Tags, SideNotesView) {
+define(['underscore', 'marionette', 'templates', 'models/note', 'collections/notes', 'collections/tags', 'views/SideNotesView'], function(_, Marionette, templates, Note, Notes, Tags, SideNotesView) {
   'use strict';
   return Marionette.LayoutView.extend({
     className: 'app-layout',
@@ -15,16 +15,21 @@ define(['underscore', 'marionette', 'templates', 'collections/notes', 'collectio
       console.log('onRender()');
     },
     onShow: function() {
+      var all;
       console.log('onShow()');
+      all = new Note({
+        name: 'All',
+        is_default: 0,
+        is_active: 1
+      });
       this.notes.fetch().done((function(_this) {
         return function() {
           var notes_view;
-          console.log(_this.notes);
+          _this.notes.unshift(all);
           notes_view = new SideNotesView({
             collection: _this.notes
           });
-          console.log(notes_view);
-          return _this.note_list.show(notes_view);
+          _this.note_list.show(notes_view);
         };
       })(this));
     }

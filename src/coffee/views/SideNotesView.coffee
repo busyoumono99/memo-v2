@@ -10,23 +10,17 @@ define [
 
 	return Marionette.CompositeView.extend
 		className: 'sidebar-nav navbar-collapse'
-
 		template: _.template(templates.side.note_list)
-
 		childView: SideNoteView
-
 		childViewContainer: '#side-note-container'
-
 		collectionEvents:
 			'all': 'render'
-
-		onShow: ->
-			console.log 'SideNotesView.onShow()'
-			# @$el.on()
-			return
-
 		initialize: ->
-			'SideNotesView.initialize()'
-			@render()
+			# console.log  'SideNotesView.initialize()'
+
+
+
+
+
 
 

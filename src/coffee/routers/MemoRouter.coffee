@@ -6,8 +6,6 @@ define [
 	console.log 'run MemoRouter'
 
 	return Marionette.AppRouter.extend
-		controller: MemoController
-
 		appRoutes:
 			'':				'memoList'
 			'home':			'memoList'

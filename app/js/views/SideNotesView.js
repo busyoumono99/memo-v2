@@ -9,12 +9,6 @@ define(['underscore', 'marionette', 'vent', 'templates', 'views/SideNoteView'], 
     collectionEvents: {
       'all': 'render'
     },
-    onShow: function() {
-      console.log('SideNotesView.onShow()');
-    },
-    initialize: function() {
-      'SideNotesView.initialize()';
-      return this.render();
-    }
+    initialize: function() {}
   });
 });

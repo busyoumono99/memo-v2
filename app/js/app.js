@@ -6,7 +6,8 @@ define(['marionette'], function(Marionette) {
   app.addRegions({
     main: '#main'
   });
-  app.on('initialize:after', function() {
+  app.on('start', function() {
+    console.log('run app:start');
     Backbone.history.start();
   });
   app.vent.on('app:show', function(sideView, appView) {
@@ -14,17 +15,13 @@ define(['marionette'], function(Marionette) {
     app.content.show(appView);
   });
   app.addInitializer(function(options) {
-    console.log(options.routers);
-    console.log(options.routers.memo);
     _.each(options.routers, function(router) {
       var c, r;
       console.log('new router');
-      console.log(router);
       c = new router.c();
       r = new router.r({
         controller: c
       });
-      console.log(r);
     });
   });
   return app;

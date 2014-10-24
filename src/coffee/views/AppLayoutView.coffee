@@ -2,10 +2,11 @@ define [
 	'underscore'
 	'marionette'
 	'templates'
+	'models/note'
 	'collections/notes'
 	'collections/tags'
 	'views/SideNotesView'
-], (_, Marionette, templates, Notes, Tags, SideNotesView) ->
+], (_, Marionette, templates, Note, Notes, Tags, SideNotesView) ->
 	'use strict'
 
 	return Marionette.LayoutView.extend
@@ -29,13 +30,21 @@ define [
 
 		onShow: () ->
 			console.log 'onShow()'
-
+			all = new Note {
+				name: 'All'
+				is_default: 0
+				is_active: 1
+			}
+			# @notes.add(all)
 			@notes.fetch().done =>
-				console.log @notes
+				# console.log @notes
+
+				@notes.unshift(all)
 
 				notes_view = new SideNotesView {
 					collection: @notes
 				}
-				console.log notes_view
+				# console.log notes_view
 				@note_list.show(notes_view)
+				return
 			return

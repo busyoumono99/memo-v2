@@ -5,13 +5,13 @@ define(['marionette', 'views/AppLayoutView', 'app', 'vent'], function(Marionette
   MemoController = Marionette.Controller.extend({
     initialize: function(options) {
       var applayout;
+      console.log('MemoController.initialize()');
       applayout = new AppLayoutView();
       app.main.show(applayout);
       return applayout.render();
     },
     memoList: function() {
       console.log('run memoList()');
-      this.initialize();
     },
     memoForm: function(id) {},
     memoAdd: function() {},

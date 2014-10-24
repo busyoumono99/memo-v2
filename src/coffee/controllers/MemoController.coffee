@@ -9,13 +9,13 @@ define [
 
 	MemoController = Marionette.Controller.extend
 		initialize: (options) ->
+			console.log 'MemoController.initialize()'
 			applayout = new AppLayoutView()
 			app.main.show(applayout)
 			applayout.render()
 
 		memoList: ->
 			console.log 'run memoList()'
-			@initialize()
 			return
 		memoForm: (id) ->
 			return
