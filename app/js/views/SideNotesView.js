@@ -6,9 +6,6 @@ define(['underscore', 'marionette', 'vent', 'templates', 'views/SideNoteView'], 
     template: _.template(templates.side.note_list),
     childView: SideNoteView,
     childViewContainer: '#side-note-container',
-    collectionEvents: {
-      'all': 'render'
-    },
     initialize: function() {}
   });
 });

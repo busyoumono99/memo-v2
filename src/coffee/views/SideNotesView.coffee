@@ -13,8 +13,8 @@ define [
 		template: _.template(templates.side.note_list)
 		childView: SideNoteView
 		childViewContainer: '#side-note-container'
-		collectionEvents:
-			'all': 'render'
+		# collectionEvents:
+		# 	'all': 'render'
 		initialize: ->
 			# console.log  'SideNotesView.initialize()'
 
