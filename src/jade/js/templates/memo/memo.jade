@@ -1,7 +1,7 @@
 //- tr
 td.no <%= id %>
 td.todo
-  | <input id="memo-<%= id %>" type="checkbox" checked=""/>
+  | <input id="memo-<%= id %>" type="checkbox" disabled=""<% if (completed == 1) {%>checked=""<% } %>/>
 td.title
   label(for!="memo-<%= id %>") <%= title %>
 td.content

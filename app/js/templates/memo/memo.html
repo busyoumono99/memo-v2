@@ -1,6 +1,6 @@
 
 <td class="no"><%= id %></td>
-<td class="todo"><input id="memo-<%= id %>" type="checkbox" checked=""/></td>
+<td class="todo"><input id="memo-<%= id %>" type="checkbox" disabled=""<% if (completed == 1) {%>checked=""<% } %>/></td>
 <td class="title">
   <label for="memo-<%= id %>"><%= title %></label>
 </td>
