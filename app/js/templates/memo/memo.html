@@ -1,0 +1,18 @@
+
+<td class="no"><%= id %></td>
+<td class="todo"><input id="memo-<%= id %>" type="checkbox" checked=""/></td>
+<td class="title">
+  <label for="memo-<%= id %>"><%= title %></label>
+</td>
+<td class="content">
+  <label for="memo-<%= id %>"><%= content %></label>
+</td>
+<td class="func">
+   
+   <a href="#/edit/<%= id %>" class="btn btn-default">
+     
+     <i class="fa fa-pencil-square-o"></i></a>&nbsp;&nbsp;
+   <a href="#/delete/<%= id %>" class="btn btn-danger">
+     
+     <i class="fa fa-trash-o"></i></a>
+</td>

@@ -1,0 +1,21 @@
+//- tr
+td.no <%= id %>
+td.todo
+  | <input id="memo-<%= id %>" type="checkbox" checked=""/>
+td.title
+  label(for!="memo-<%= id %>") <%= title %>
+td.content
+  label(for!="memo-<%= id %>") <%= content %>
+td.func
+  | 
+  | 
+  a.btn.btn-default(href!='#/edit/<%= id %>')
+    | 
+    | 
+    i.fa.fa-pencil-square-o
+  | &nbsp;&nbsp;
+  | 
+  a.btn.btn-danger(href!='#/delete/<%= id %>')
+    | 
+    | 
+    i.fa.fa-trash-o
