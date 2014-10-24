@@ -7,4 +7,7 @@ define (require) ->
 			sidebar:	require 'text!templates/side/sidebar.html'
 			tag:		require 'text!templates/side/tag.html'
 			tag_list:	require 'text!templates/side/tag_list.html'
+		memo:
+			memo:		require 'text!templates/memo/memo.html'
+			memo_list:	require 'text!templates/memo/memo_list.html'
 	}
