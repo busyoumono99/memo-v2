@@ -6,7 +6,7 @@ define(['marionette', 'controllers/MemoController'], function(Marionette, MemoCo
       '': 'memoList',
       'home': 'memoList',
       'edit/:id': 'memoForm',
-      'create/': 'memoAdd',
+      'create': 'memoAdd',
       'delete/:id': 'memoDelete'
     }
   });

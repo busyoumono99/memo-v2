@@ -1,4 +1,4 @@
-define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'collections/memos', 'app', 'vent'], function(Marionette, AppLayoutView, MemoListView, Memos, app, vent) {
+define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/memo/MemoFormView', 'models/memo', 'collections/memos', 'app', 'vent', 'ModelMgr'], function(Marionette, AppLayoutView, MemoListView, MemoFormView, Memo, Memos, app, vent, ModelMgr) {
   'use strict';
   var MemoController;
   console.log('run MemoController');
@@ -9,8 +9,7 @@ define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'collect
       applayout = new AppLayoutView();
       app.main.show(applayout);
       applayout.render();
-      this.collection = new Memos();
-      return this.collection.fetch();
+      return this.collection = ModelMgr.get().memos;
     },
     memoList: function() {
       var list_view;
@@ -21,7 +20,15 @@ define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'collect
       app.main.currentView.content.show(list_view);
     },
     memoForm: function(id) {},
-    memoAdd: function() {},
+    memoAdd: function() {
+      var create_view, new_meno;
+      console.log('run memoAdd()');
+      new_meno = new Memo();
+      create_view = new MemoFormView({
+        model: new_meno
+      });
+      app.main.currentView.content.show(create_view);
+    },
     memoDelete: function(id) {}
   });
   return MemoController;
