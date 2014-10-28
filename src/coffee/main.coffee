@@ -15,7 +15,8 @@ define [
 	# Application routers
 	'routers/MemoRouter'
 	'controllers/MemoController'
-], ($, _, Backbone, bootstrap, metisMenu, sb_admin_2, app, MemoRouter, MemoController) ->
+	'ModelMgr'
+], ($, _, Backbone, bootstrap, metisMenu, sb_admin_2, app, MemoRouter, MemoController, ModelMgr) ->
 	options =
 		routers:
 			memo:
