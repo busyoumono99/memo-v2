@@ -21,6 +21,7 @@ define [
 
 		initialize: (options) ->
 			@notes = Notes.getInstance()
+			@listenTo(@notes, 'sync', @updateNoteList)
 
 			return
 
@@ -30,21 +31,20 @@ define [
 
 		onShow: () ->
 			console.log 'onShow()'
+			return
+
+		updateNoteList: ->
 			all = new Note {
 				name: 'All'
 				is_default: 0
 				is_active: 1
 			}
-			# @notes.add(all)
-			@notes.fetch().done =>
-				# console.log @notes
+			cloneNotes = @notes.clone()
+			cloneNotes.unshift(all)
 
-				@notes.unshift(all)
-
-				notes_view = new SideNotesView {
-					collection: @notes
-				}
-				# console.log notes_view
-				@note_list.show(notes_view)
-				return
+			notes_view = new SideNotesView {
+				collection: cloneNotes
+			}
+			# console.log notes_view
+			@note_list.show(notes_view)
 			return

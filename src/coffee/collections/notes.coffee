@@ -18,8 +18,8 @@ define [
 
 	Notes.instance = null
 	Notes.getInstance = ->
-		console.log 'Note.getInstance()'
-		console.log Notes.instance
+		# console.log 'Note.getInstance()'
+		# console.log Notes.instance
 		if !Notes.instance?
 			istc = new @()
 			Notes.instance = istc

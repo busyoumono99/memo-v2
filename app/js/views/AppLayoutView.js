@@ -10,28 +10,27 @@ define(['underscore', 'marionette', 'templates', 'models/note', 'collections/not
     },
     initialize: function(options) {
       this.notes = Notes.getInstance();
+      this.listenTo(this.notes, 'sync', this.updateNoteList);
     },
     onRender: function() {
       console.log('onRender()');
     },
     onShow: function() {
-      var all;
       console.log('onShow()');
+    },
+    updateNoteList: function() {
+      var all, cloneNotes, notes_view;
       all = new Note({
         name: 'All',
         is_default: 0,
         is_active: 1
       });
-      this.notes.fetch().done((function(_this) {
-        return function() {
-          var notes_view;
-          _this.notes.unshift(all);
-          notes_view = new SideNotesView({
-            collection: _this.notes
-          });
-          _this.note_list.show(notes_view);
-        };
-      })(this));
+      cloneNotes = this.notes.clone();
+      cloneNotes.unshift(all);
+      notes_view = new SideNotesView({
+        collection: cloneNotes
+      });
+      this.note_list.show(notes_view);
     }
   });
 });
