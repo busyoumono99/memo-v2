@@ -1,0 +1,7 @@
+//- #note-select-container.form-group
+label.col-sm-2.control-label(for='note-select') Note
+.col-sm-10.note-select-container
+  select.note-select.form-control
+    | <% _.each(items, function(item){ %>
+    |   <option value="<%= item.id %>"><%= item.name %></option>
+    | <% }) %>

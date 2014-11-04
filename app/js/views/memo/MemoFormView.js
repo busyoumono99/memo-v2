@@ -1,4 +1,4 @@
-define(['underscore', 'marionette', 'app', 'vent', 'templates'], function(_, Marionette, app, vent, templates) {
+define(['underscore', 'marionette', 'app', 'vent', 'templates', 'collections/notes', 'views/memo/MemoFormNotesView'], function(_, Marionette, app, vent, templates, Notes, MemoFormNotesView) {
   'use strict';
   console.log('read MemoFormView');
   console.log(templates);
@@ -12,9 +12,15 @@ define(['underscore', 'marionette', 'app', 'vent', 'templates'], function(_, Mar
     initialize: function(options) {
       console.log('MemoFormView.initialize()');
       console.log(app.main.currentView);
+      this.notes = Notes.getInstance();
     },
     onShow: function() {
-      return console.log('onShow()');
+      var notes_view;
+      console.log('onShow()');
+      notes_view = new MemoFormNotesView({
+        collection: this.notes
+      });
+      this.note_container.show(notes_view);
     }
   });
 });
