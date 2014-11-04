@@ -1,4 +1,4 @@
-define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/memo/MemoFormView', 'models/memo', 'collections/memos', 'app', 'vent', 'ModelMgr'], function(Marionette, AppLayoutView, MemoListView, MemoFormView, Memo, Memos, app, vent, ModelMgr) {
+define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/memo/MemoFormView', 'models/memo', 'collections/memos', 'collections/notes', 'app', 'vent'], function(Marionette, AppLayoutView, MemoListView, MemoFormView, Memo, Memos, Notes, app, vent) {
   'use strict';
   var MemoController;
   console.log('run MemoController');
@@ -9,7 +9,7 @@ define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/m
       applayout = new AppLayoutView();
       app.main.show(applayout);
       applayout.render();
-      return this.collection = ModelMgr.get().memos;
+      this.collection = Memos.getInstance();
     },
     memoList: function() {
       var list_view;
@@ -21,8 +21,9 @@ define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/m
     },
     memoForm: function(id) {},
     memoAdd: function() {
-      var create_view, new_meno;
+      var create_view, new_meno, test;
       console.log('run memoAdd()');
+      test = Notes.getInstance();
       new_meno = new Memo();
       create_view = new MemoFormView({
         model: new_meno

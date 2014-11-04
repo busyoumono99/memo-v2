@@ -5,7 +5,7 @@ define [
 	'use strict'
 	console.log 'run notes'
 
-	return Backbone.Collection.extend
+	Notes = Backbone.Collection.extend
 		model: Note
 		url: '../../data.memo/notes'
 		parse: (response) ->
@@ -15,3 +15,15 @@ define [
 				return response.notes
 			response
 
+
+	Notes.instance = null
+	Notes.getInstance = ->
+		console.log 'Note.getInstance()'
+		console.log Notes.instance
+		if !Notes.instance?
+			istc = new @()
+			Notes.instance = istc
+			Notes.instance.fetch()
+		Notes.instance
+
+	return Notes

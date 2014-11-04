@@ -1,4 +1,4 @@
-define(['underscore', 'marionette', 'templates', 'models/note', 'collections/tags', 'views/SideNotesView', 'ModelMgr'], function(_, Marionette, templates, Note, Tags, SideNotesView, ModelMgr) {
+define(['underscore', 'marionette', 'templates', 'models/note', 'collections/notes', 'collections/tags', 'views/SideNotesView'], function(_, Marionette, templates, Note, Notes, Tags, SideNotesView) {
   'use strict';
   return Marionette.LayoutView.extend({
     className: 'app-layout',
@@ -9,7 +9,7 @@ define(['underscore', 'marionette', 'templates', 'models/note', 'collections/tag
       content: '#page-wrapper'
     },
     initialize: function(options) {
-      this.notes = ModelMgr.get().notes.clone();
+      this.notes = Notes.getInstance();
     },
     onRender: function() {
       console.log('onRender()');

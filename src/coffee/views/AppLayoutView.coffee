@@ -3,10 +3,10 @@ define [
 	'marionette'
 	'templates'
 	'models/note'
+	'collections/notes'
 	'collections/tags'
 	'views/SideNotesView'
-	'ModelMgr'
-], (_, Marionette, templates, Note, Tags, SideNotesView, ModelMgr) ->
+], (_, Marionette, templates, Note, Notes, Tags, SideNotesView) ->
 	'use strict'
 
 	return Marionette.LayoutView.extend
@@ -20,7 +20,7 @@ define [
 			content: '#page-wrapper'
 
 		initialize: (options) ->
-			@notes = ModelMgr.get().notes.clone()
+			@notes = Notes.getInstance()
 
 			return
 

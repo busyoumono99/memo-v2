@@ -1,7 +1,8 @@
 define(['backbone', 'models/note'], function(Backbone, Note) {
   'use strict';
+  var Notes;
   console.log('run notes');
-  return Backbone.Collection.extend({
+  Notes = Backbone.Collection.extend({
     model: Note,
     url: '../../data.memo/notes',
     parse: function(response) {
@@ -13,4 +14,17 @@ define(['backbone', 'models/note'], function(Backbone, Note) {
       return response;
     }
   });
+  Notes.instance = null;
+  Notes.getInstance = function() {
+    var istc;
+    console.log('Note.getInstance()');
+    console.log(Notes.instance);
+    if (Notes.instance == null) {
+      istc = new this();
+      Notes.instance = istc;
+      Notes.instance.fetch();
+    }
+    return Notes.instance;
+  };
+  return Notes;
 });

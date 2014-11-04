@@ -5,7 +5,7 @@ define [
 	'use strict'
 	console.log 'run memos'
 
-	return Backbone.Collection.extend
+	Memos = Backbone.Collection.extend
 		model: Memo
 		url: '../../data.memo/memos'
 		parse: (response)->
@@ -14,3 +14,13 @@ define [
 			if response.memos?
 				return response.memos
 			response
+
+	Memos.instance = null
+	Memos.getInstance = ->
+		if !Memos.instance?
+			istc = new @()
+			Memos.instance = istc
+			Memos.instance.fetch()
+		Memos.instance
+
+	return Memos

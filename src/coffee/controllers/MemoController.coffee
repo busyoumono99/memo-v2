@@ -5,10 +5,10 @@ define [
 	'views/memo/MemoFormView'
 	'models/memo'
 	'collections/memos'
+	'collections/notes'
 	'app'
 	'vent'
-	'ModelMgr'
-], (Marionette, AppLayoutView, MemoListView, MemoFormView, Memo, Memos, app, vent, ModelMgr) ->
+], (Marionette, AppLayoutView, MemoListView, MemoFormView, Memo, Memos, Notes, app, vent) ->
 	'use strict'
 	console.log 'run MemoController'
 
@@ -18,7 +18,8 @@ define [
 			applayout = new AppLayoutView()
 			app.main.show(applayout)
 			applayout.render()
-			@collection =  ModelMgr.get().memos
+			@collection = Memos.getInstance()
+			return
 
 		memoList: ->
 			console.log 'run memoList()'
@@ -34,6 +35,7 @@ define [
 			return
 		memoAdd: ->
 			console.log 'run memoAdd()'
+			test = Notes.getInstance()
 			new_meno = new Memo()
 			create_view = new MemoFormView {
 				model: new_meno
