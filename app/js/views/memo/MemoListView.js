@@ -5,6 +5,26 @@ define(['underscore', 'marionette', 'vent', 'templates', 'views/memo/MemoItemVie
     className: 'row',
     template: _.template(templates.memo.memo_list),
     childView: MemoItemView,
-    childViewContainer: '#list-table tbody'
+    childViewContainer: '#list-table tbody',
+    ui: {
+      spinner: '.spinner-container',
+      non_memo: '.non-memo-container'
+    },
+    collectionEvents: {
+      'sync': 'updateInfo'
+    },
+    updateInfo: function() {
+      if (this.collection.length > 0) {
+        this.ui.spinner.addClass('hidden');
+      } else if (this.collection.length === 0) {
+        this.ui.spinner.addClass('hidden');
+        this.ui.non_memo.removeClass('hidden');
+      }
+    },
+    onShow: function() {
+      if (this.collection.isSynced) {
+        this.updateInfo();
+      }
+    }
   });
 });

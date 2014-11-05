@@ -14,6 +14,11 @@ define [
 			if response.memos?
 				return response.memos
 			response
+		isSynced: false
+		initialize: ->
+			@on('sync', @updateSynced)
+		updateSynced: ->
+			@isSynced = true
 
 	Memos.instance = null
 	Memos.getInstance = ->

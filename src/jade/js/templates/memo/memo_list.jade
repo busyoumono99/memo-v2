@@ -1,7 +1,6 @@
 //- div.row
 div.col-lg-12
     h1.page-header Memo list
-
     table#list-table.table.table-striped.table-bordered.table-hover
       thead
         tr
@@ -11,45 +10,10 @@ div.col-lg-12
           th.content content
           th.func func
       tbody
-        //- tr
-          td.no 1
-          td.todo
-            input#memo-112(type='checkbox', checked='')
-          td.title
-            label(for="memo-112") title1
-          td.content
-            label(for="memo-112") content1
-          td.func
-              a.btn.btn-default(href='#/edit/112')
-                i.fa.fa-pencil-square-o
-              | &nbsp;&nbsp;
-              a.btn.btn-danger
-                i.fa.fa-trash-o
-        //- tr
-          td.no 2
-          td.todo
-            input#memo-114(type='checkbox', checked='')
-          td.title
-            label(for="memo-114") title2
-          td.content
-            label(for="memo-114") content2
-          td.func
-              a.btn.btn-default(href='#/edit/112')
-                i.fa.fa-pencil-square-o
-              | &nbsp;&nbsp;
-              a.btn.btn-danger
-                i.fa.fa-trash-o
-        //- tr
-          td.no 3
-          td.todo
-            input#memo-115(type='checkbox', checked='')
-          td.title
-            label(for="memo-115") title3
-          td.content
-            label(for="memo-115") content3
-          td.func
-              a.btn.btn-default(href='#/edit/112')
-                i.fa.fa-pencil-square-o
-              | &nbsp;&nbsp;
-              a.btn.btn-danger
-                i.fa.fa-trash-o
+        tr.spinner-container
+          td.text-center(colspan="5")
+            i.fa.fa-spinner.fa-spin.fa-3x
+            br
+            span(style="line-height: 2.5em;font-size:200%;") loading...
+        tr.non-memo-container.hidden
+          td(colspan="5",style="text-align: center;") no memo

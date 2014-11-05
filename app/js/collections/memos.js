@@ -12,6 +12,13 @@ define(['backbone', 'models/memo'], function(Backbone, Memo) {
         return response.memos;
       }
       return response;
+    },
+    isSynced: false,
+    initialize: function() {
+      return this.on('sync', this.updateSynced);
+    },
+    updateSynced: function() {
+      return this.isSynced = true;
     }
   });
   Memos.instance = null;
