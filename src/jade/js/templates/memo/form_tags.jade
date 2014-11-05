@@ -1,0 +1,6 @@
+//- .col-sm-10.tag-container
+label.col-sm-2.control-label Tag
+.col-sm-10.tag-container
+  | <% _.each(items, function(item){ %>
+  | <button data-toggle="button" class="btn btn-success" data-id="<%= item.id %>"><%= item.name %></button>
+  | <% }) %>

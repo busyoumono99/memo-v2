@@ -5,12 +5,14 @@ define [
 	'vent'
 	'templates'
 	'collections/notes'
+	'collections/tags'
 	'views/memo/MemoFormNotesView'
-], (_, Marionette, app, vent, templates, Notes, MemoFormNotesView) ->
+	'views/memo/MemoFormTagsView'
+], (_, Marionette, app, vent, templates, Notes, Tags, MemoFormNotesView, MemoFormTagsView) ->
 	'use strict'
 
 	console.log 'read MemoFormView'
-	console.log templates
+	# console.log templates
 
 	return Marionette.LayoutView.extend
 		className: 'row'
@@ -21,16 +23,21 @@ define [
 
 		initialize: (options) ->
 			console.log 'MemoFormView.initialize()'
-			console.log app.main.currentView
 			@notes = Notes.getInstance()
+			@tags = Tags.getInstance()
 			return
 
 		onShow: () ->
 			console.log 'onShow()'
+			# リージョンにノートとタグの一覧を追加する
 			notes_view = new MemoFormNotesView {
 				collection: @notes
 			}
-			# console.log notes_view
 			@note_container.show(notes_view)
+
+			tags_view = new MemoFormTagsView {
+				collection: @tags
+			}
+			@tag_container.show(tags_view)
 
 			return

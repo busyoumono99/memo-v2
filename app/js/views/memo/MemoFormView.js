@@ -1,7 +1,6 @@
-define(['underscore', 'marionette', 'app', 'vent', 'templates', 'collections/notes', 'views/memo/MemoFormNotesView'], function(_, Marionette, app, vent, templates, Notes, MemoFormNotesView) {
+define(['underscore', 'marionette', 'app', 'vent', 'templates', 'collections/notes', 'collections/tags', 'views/memo/MemoFormNotesView', 'views/memo/MemoFormTagsView'], function(_, Marionette, app, vent, templates, Notes, Tags, MemoFormNotesView, MemoFormTagsView) {
   'use strict';
   console.log('read MemoFormView');
-  console.log(templates);
   return Marionette.LayoutView.extend({
     className: 'row',
     template: _.template(templates.memo.form),
@@ -11,16 +10,20 @@ define(['underscore', 'marionette', 'app', 'vent', 'templates', 'collections/not
     },
     initialize: function(options) {
       console.log('MemoFormView.initialize()');
-      console.log(app.main.currentView);
       this.notes = Notes.getInstance();
+      this.tags = Tags.getInstance();
     },
     onShow: function() {
-      var notes_view;
+      var notes_view, tags_view;
       console.log('onShow()');
       notes_view = new MemoFormNotesView({
         collection: this.notes
       });
       this.note_container.show(notes_view);
+      tags_view = new MemoFormTagsView({
+        collection: this.tags
+      });
+      this.tag_container.show(tags_view);
     }
   });
 });

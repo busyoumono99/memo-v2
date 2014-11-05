@@ -12,7 +12,8 @@ define(function(require) {
       memo: require('text!templates/memo/memo.html'),
       memo_list: require('text!templates/memo/memo_list.html'),
       form: require('text!templates/memo/form.html'),
-      form_notes: require('text!templates/memo/form_notes.html')
+      form_notes: require('text!templates/memo/form_notes.html'),
+      form_tags: require('text!templates/memo/form_tags.html')
     }
   };
 });

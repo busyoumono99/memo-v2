@@ -5,7 +5,7 @@ define [
 	'use strict'
 	console.log 'run tags'
 
-	return Backbone.Collection.extend
+	Tags = Backbone.Collection.extend
 		url: ->
 			id = this.get("tag").id if this.get("tag")
 			created = if id then ("/" + id) else ''
@@ -17,3 +17,15 @@ define [
 			if response.tags?
 				return response.tags
 			response
+
+	Tags.instance = null
+	Tags.getInstance = ->
+		# console.log 'Note.getInstance()'
+		# console.log Tags.instance
+		if !Tags.instance?
+			istc = new @()
+			Tags.instance = istc
+			Tags.instance.fetch()
+		Tags.instance
+
+	return Tags
