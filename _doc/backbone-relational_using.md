@@ -187,6 +187,37 @@ require [
 		console.log  note.get("name")
 		tags = memo.get("tags")
 		console.log tags
+		console.log JSON.stringify(tags.toJSON())
+		# [
+		# 	{
+		# 		"id": "1",
+		# 		"name": "*self",
+		# 		"is_active": false,
+		# 		"created": "2014-03-10 11:50:11",
+		# 		"modified": "2014-10-15 14:13:41",
+		# 		"MemosTag": {
+		# 			"id": "1",
+		# 			"tag_id": "1",
+		# 			"memo_id": "3",
+		# 			"created": "0000-00-00 00:00:00",
+		# 			"modified": null
+		# 		}
+		# 	},
+		# 	{
+		# 		"id": "2",
+		# 		"name": "*bosan",
+		# 		"is_active": false,
+		# 		"created": "2014-03-10 11:50:36",
+		# 		"modified": "2014-10-15 14:13:40",
+		# 		"MemosTag": {
+		# 			"id": "2",
+		# 			"tag_id": "2",
+		# 			"memo_id": "3",
+		# 			"created": "0000-00-00 00:00:00",
+		# 			"modified": null
+		# 		}
+		# 	}
+		# ]
 		# console.log JSON.stringify(memo.toJSON())
 		console.log tags.url()
 		tag = tags.get(1)
