@@ -11,3 +11,5 @@ define [
 	return Marionette.ItemView.extend
 		tagName: 'tr'
 		template: _.template(templates.memo.memo)
+		ui:
+			delete_btn: '.delete-btn'
