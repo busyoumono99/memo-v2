@@ -1,4 +1,4 @@
-define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/memo/MemoFormView', 'models/memo', 'collections/memos', 'collections/notes', 'app', 'vent'], function(Marionette, AppLayoutView, MemoListView, MemoFormView, Memo, Memos, Notes, app, vent) {
+define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/memo/MemoFormView', 'views/memo/MemoDeleteModalView', 'models/memo', 'collections/memos', 'collections/notes', 'app', 'vent'], function(Marionette, AppLayoutView, MemoListView, MemoFormView, MemoDeleteModalView, Memo, Memos, Notes, app, vent) {
   'use strict';
   var MemoController;
   console.log('run MemoController');
@@ -32,13 +32,13 @@ define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/m
       app.main.currentView.content.show(create_view);
     },
     memoDelete: function(childview) {
-      var confirm, messages;
+      var d_modal, messages;
       console.log(childview);
       messages = "" + (childview.model.get('id')) + " : " + (childview.model.get('title')) + " : を削除してよろしいですか？";
-      confirm = window.confirm(messages);
-      if (confirm) {
-        childview.model.destroy();
-      }
+      d_modal = new MemoDeleteModalView({
+        model: childview.model
+      });
+      vent.trigger('modal:show', d_modal);
     }
   });
   return MemoController;

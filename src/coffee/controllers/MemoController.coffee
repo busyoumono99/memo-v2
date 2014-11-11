@@ -3,12 +3,13 @@ define [
 	'views/AppLayoutView'
 	'views/memo/MemoListView'
 	'views/memo/MemoFormView'
+	'views/memo/MemoDeleteModalView'
 	'models/memo'
 	'collections/memos'
 	'collections/notes'
 	'app'
 	'vent'
-], (Marionette, AppLayoutView, MemoListView, MemoFormView, Memo, Memos, Notes, app, vent) ->
+], (Marionette, AppLayoutView, MemoListView, MemoFormView, MemoDeleteModalView, Memo, Memos, Notes, app, vent) ->
 	'use strict'
 	console.log 'run MemoController'
 
@@ -48,9 +49,11 @@ define [
 		memoDelete: (childview) ->
 			console.log childview
 			messages = "#{childview.model.get('id')} : #{childview.model.get('title')} : を削除してよろしいですか？"
-			confirm = window.confirm(messages)
-			if confirm
-				childview.model.destroy()
+			d_modal = new MemoDeleteModalView {model: childview.model}
+			vent.trigger 'modal:show', d_modal
+			# confirm = window.confirm(messages)
+			# if confirm
+			# 	childview.model.destroy()
 			return
 
 	MemoController

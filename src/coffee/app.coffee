@@ -9,8 +9,21 @@ define [
 
 	app = new Marionette.Application()
 
+	ModalRegion = Marionette.Region.extend
+		el: '#modal'
+
+		onShow: (view) ->
+			view.on 'close', @hideModal, @
+			@$el.modal('show')
+			return
+
+		hideModal: ->
+			@$el.modal('hide')
+			return
+
 	app.addRegions
 		main:	'#main'
+		modal:	ModalRegion
 
 	app.on 'start', ->
 		console.log 'run app:start'
@@ -21,6 +34,15 @@ define [
 		app.sidenav.show sideView
 		app.content.show appView
 		return
+
+	app.vent.on 'modal:show', (view) ->
+		console.log view
+		console.log app.modal
+		app.modal.show(view)
+		return
+
+	app.vent.on 'modal:close', ->
+		app.modal.hideModal()
 
 	app.addInitializer (options) ->
 		# console.log options.routers
