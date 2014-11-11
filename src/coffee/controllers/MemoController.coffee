@@ -30,6 +30,9 @@ define [
 			# console.log list_view
 			# console.log app.main.currentView
 			app.main.currentView.content.show(list_view)
+
+			# MemoItemViewの削除用のトリガーイベントの購読
+			list_view.on 'childview:memo:delete', @memoDelete, @
 			return
 		memoForm: (id) ->
 			return
@@ -42,7 +45,12 @@ define [
 			}
 			app.main.currentView.content.show(create_view)
 			return
-		memoDelete: (id) ->
+		memoDelete: (childview) ->
+			console.log childview
+			messages = "#{childview.model.get('id')} : #{childview.model.get('title')} : を削除してよろしいですか？"
+			confirm = window.confirm(messages)
+			if confirm
+				childview.model.destroy()
 			return
 
 	MemoController

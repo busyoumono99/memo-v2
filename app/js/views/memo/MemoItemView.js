@@ -3,6 +3,9 @@ define(['underscore', 'marionette', 'vent', 'templates'], function(_, Marionette
   console.log('read MemoItemView');
   return Marionette.ItemView.extend({
     tagName: 'tr',
-    template: _.template(templates.memo.memo)
+    template: _.template(templates.memo.memo),
+    triggers: {
+      'click .delete-btn': 'memo:delete'
+    }
   });
 });

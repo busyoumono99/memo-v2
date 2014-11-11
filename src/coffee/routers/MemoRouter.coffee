@@ -11,4 +11,3 @@ define [
 			'home':			'memoList'
 			'edit/:id':		'memoForm'
 			'create':		'memoAdd'
-			'delete/:id':	'memoDelete'

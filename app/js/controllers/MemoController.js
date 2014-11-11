@@ -18,6 +18,7 @@ define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/m
         collection: this.collection
       });
       app.main.currentView.content.show(list_view);
+      list_view.on('childview:memo:delete', this.memoDelete, this);
     },
     memoForm: function(id) {},
     memoAdd: function() {
@@ -30,7 +31,15 @@ define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/m
       });
       app.main.currentView.content.show(create_view);
     },
-    memoDelete: function(id) {}
+    memoDelete: function(childview) {
+      var confirm, messages;
+      console.log(childview);
+      messages = "" + (childview.model.get('id')) + " : " + (childview.model.get('title')) + " : を削除してよろしいですか？";
+      confirm = window.confirm(messages);
+      if (confirm) {
+        childview.model.destroy();
+      }
+    }
   });
   return MemoController;
 });
