@@ -10,11 +10,11 @@ div.col-lg-12
     .form-group
       label.col-sm-2.control-label(for='inputTitle') Title
       .col-sm-10
-        input#inputTitle.form-control(type='text', placeholder='Title', autofocus='')
+        input#inputTitle.form-control(type='text', placeholder='Title', autofocus='', value!="<%= title %>")
     .form-group
       label.col-sm-2.control-label(for='inputContent') Content
       .col-sm-10
-        input#inputContent.form-control(type='text', placeholder='Content')
+        input#inputContent.form-control(type='text', placeholder='Content', value!="<%= content %>")
     .form-group
       .col-sm-offset-2.col-sm-10
         .btn-group

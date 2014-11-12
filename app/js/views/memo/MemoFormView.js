@@ -18,6 +18,8 @@ define(['underscore', 'marionette', 'app', 'vent', 'templates', 'collections/not
       console.log('onShow()');
       notes_view = new MemoFormNotesView({
         collection: this.notes
+      }, {
+        form_model: this.model
       });
       this.note_container.show(notes_view);
       tags_view = new MemoFormTagsView({

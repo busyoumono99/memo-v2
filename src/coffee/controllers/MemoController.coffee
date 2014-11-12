@@ -36,6 +36,13 @@ define [
 			list_view.on 'childview:memo:delete', @memoDelete, @
 			return
 		memoForm: (id) ->
+			console.log 'run memoAdd()'
+
+			edit_meno = Memos.getInstance().get(id)
+			form_view = new MemoFormView {
+				model: edit_meno
+			}
+			app.main.currentView.content.show(form_view)
 			return
 		memoAdd: ->
 			console.log 'run memoAdd()'

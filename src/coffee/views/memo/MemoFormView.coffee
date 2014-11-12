@@ -32,6 +32,8 @@ define [
 			# リージョンにノートとタグの一覧を追加する
 			notes_view = new MemoFormNotesView {
 				collection: @notes
+			}, {
+				form_model: @model
 			}
 			@note_container.show(notes_view)
 

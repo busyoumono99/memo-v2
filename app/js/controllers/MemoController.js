@@ -20,7 +20,15 @@ define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/m
       app.main.currentView.content.show(list_view);
       list_view.on('childview:memo:delete', this.memoDelete, this);
     },
-    memoForm: function(id) {},
+    memoForm: function(id) {
+      var edit_meno, form_view;
+      console.log('run memoAdd()');
+      edit_meno = Memos.getInstance().get(id);
+      form_view = new MemoFormView({
+        model: edit_meno
+      });
+      app.main.currentView.content.show(form_view);
+    },
     memoAdd: function() {
       var create_view, new_meno, test;
       console.log('run memoAdd()');
