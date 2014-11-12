@@ -32,13 +32,12 @@ define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/m
       app.main.currentView.content.show(create_view);
     },
     memoDelete: function(childview) {
-      var d_modal, messages;
-      messages = "" + (childview.model.get('id')) + " : " + (childview.model.get('title')) + " : を削除してよろしいですか？";
+      var d_modal;
       d_modal = new MemoDeleteModalView({
         model: childview.model
       });
-      vent.trigger('modal:show', d_modal);
       d_modal.on('memo:destroy', this.memoDestroy, this);
+      vent.trigger('modal:show', d_modal);
     },
     memoDestroy: function(modalView) {
       modalView.model.destroy();

@@ -48,15 +48,19 @@ define [
 			return
 		memoDelete: (childview) ->
 			# console.log childview
-			messages = "#{childview.model.get('id')} : #{childview.model.get('title')} : を削除してよろしいですか？"
+			#	削除用のモーダルを作成
 			d_modal = new MemoDeleteModalView {model: childview.model}
-			vent.trigger 'modal:show', d_modal
+			#	イベントの購読を設定
 			d_modal.on 'memo:destroy', @memoDestroy, @
+			#	モーダル表示イベントの発火
+			vent.trigger 'modal:show', d_modal
 			return
 
 		memoDestroy: (modalView) ->
 			# console.log modalView
+			#	メモモデルの削除
 			modalView.model.destroy()
+			#	モーダル非表示イベントの発火
 			vent.trigger('modal:close')
 			return
 
