@@ -13,4 +13,4 @@ define [
 		template: _.template(templates.memo.memo)
 
 		triggers:
-			'click .delete-btn' : 'memo:delete'
+			'click a[data-delete=""]' : 'memo:delete'

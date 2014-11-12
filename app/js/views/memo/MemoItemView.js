@@ -5,7 +5,7 @@ define(['underscore', 'marionette', 'vent', 'templates'], function(_, Marionette
     tagName: 'tr',
     template: _.template(templates.memo.memo),
     triggers: {
-      'click .delete-btn': 'memo:delete'
+      'click a[data-delete=""]': 'memo:delete'
     }
   });
 });
