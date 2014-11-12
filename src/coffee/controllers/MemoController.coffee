@@ -51,9 +51,13 @@ define [
 			messages = "#{childview.model.get('id')} : #{childview.model.get('title')} : を削除してよろしいですか？"
 			d_modal = new MemoDeleteModalView {model: childview.model}
 			vent.trigger 'modal:show', d_modal
-			# confirm = window.confirm(messages)
-			# if confirm
-			# 	childview.model.destroy()
+			d_modal.on 'memo:destroy', @memoDestroy, @
+			return
+
+		memoDestroy: (modalView) ->
+			console.log modalView
+			modalView.model.destroy()
+			vent.trigger('modal:close')
 			return
 
 	MemoController

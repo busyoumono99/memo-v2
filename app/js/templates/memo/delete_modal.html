@@ -3,14 +3,14 @@
   <div class="modal-content">
     <div class="modal-header">
       <button type="button" data-dismiss="modal" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-      <h4 class="modal-title">Modal title</h4>
+      <h4 class="modal-title">メモの削除</h4>
     </div>
     <div class="modal-body">
-      <p>One fine body&hellip;</p>
+      <p>「 <%= id %> : <%= title %> 」を削除します。宜しいですか？</p>
     </div>
     <div class="modal-footer">
       <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
-      <button type="button" class="btn btn-primary">Save changes</button>
+      <button type="button" data-destroy="" class="btn btn-danger">Delete</button>
     </div>
   </div>
 </div>

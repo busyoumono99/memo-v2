@@ -5,10 +5,10 @@ div.modal-dialog
         button.close(type="button", data-dismiss="modal")
           span(aria-hidden="true") &times;
           span.sr-only Close
-        h4.modal-title Modal title
+        h4.modal-title メモの削除
       div.modal-body
-        p One fine body&hellip;
+        p 「 <%= id %> : <%= title %> 」を削除します。宜しいですか？
       div.modal-footer
         button.btn.btn-default(type="button", data-dismiss="modal") Close
-        button.btn.btn-primary(type="button") Save changes
+        button.btn.btn-danger(type="button", data-destroy="") Delete
 

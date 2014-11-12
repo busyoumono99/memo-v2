@@ -8,7 +8,5 @@ define [
 
 	return Marionette.ItemView.extend
 		template: _.template(templates.memo.delete_modal)
-		# serializeData: ->
-		# 	return {
-		# 		items: @collection.toJSON()
-		# 	}
+		triggers:
+			'click button[data-destroy=""]' : 'memo:destroy'

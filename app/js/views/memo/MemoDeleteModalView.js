@@ -2,6 +2,9 @@ define(['underscore', 'marionette', 'templates'], function(_, Marionette, templa
   'use strict';
   console.log('read MemoDeleteModalView');
   return Marionette.ItemView.extend({
-    template: _.template(templates.memo.delete_modal)
+    template: _.template(templates.memo.delete_modal),
+    triggers: {
+      'click button[data-destroy=""]': 'memo:destroy'
+    }
   });
 });

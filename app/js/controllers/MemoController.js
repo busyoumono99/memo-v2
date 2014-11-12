@@ -39,6 +39,12 @@ define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/m
         model: childview.model
       });
       vent.trigger('modal:show', d_modal);
+      d_modal.on('memo:destroy', this.memoDestroy, this);
+    },
+    memoDestroy: function(modalView) {
+      console.log(modalView);
+      modalView.model.destroy();
+      vent.trigger('modal:close');
     }
   });
   return MemoController;
