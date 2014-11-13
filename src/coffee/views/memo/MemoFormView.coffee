@@ -20,6 +20,14 @@ define [
 		regions:
 			note_container: '#note-select-container'
 			tag_container: '#tag-btn-container'
+		triggers:
+			'click button[data-save=""]' : 'memo:save'
+		ui:
+			'note': '.note-select'
+			'tags': '.tag-container'
+			'title': '#inputTitle'
+			'contents': '#inputContent'
+
 
 		initialize: (options) ->
 			console.log 'MemoFormView.initialize()'

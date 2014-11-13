@@ -1,4 +1,4 @@
-define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/memo/MemoFormView', 'views/memo/MemoDeleteModalView', 'models/memo', 'collections/memos', 'collections/notes', 'app', 'vent'], function(Marionette, AppLayoutView, MemoListView, MemoFormView, MemoDeleteModalView, Memo, Memos, Notes, app, vent) {
+define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/memo/MemoFormView', 'views/memo/MemoDeleteModalView', 'models/memo', 'collections/memos', 'collections/notes', 'collections/tags', 'app', 'vent'], function(Marionette, AppLayoutView, MemoListView, MemoFormView, MemoDeleteModalView, Memo, Memos, Notes, Tags, app, vent) {
   'use strict';
   var MemoController;
   console.log('run MemoController');
@@ -21,13 +21,14 @@ define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/m
       list_view.on('childview:memo:delete', this.memoDelete, this);
     },
     memoForm: function(id) {
-      var edit_meno, form_view;
+      var edit_memo, form_view;
       console.log('run memoAdd()');
-      edit_meno = Memos.getInstance().get(id);
+      edit_memo = Memos.getInstance().get(id);
       form_view = new MemoFormView({
-        model: edit_meno
+        model: edit_memo
       });
       app.main.currentView.content.show(form_view);
+      form_view.on('memo:save', this.saveMemo, this);
     },
     memoAdd: function() {
       var create_view, new_meno, test;
@@ -38,6 +39,32 @@ define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/m
         model: new_meno
       });
       app.main.currentView.content.show(create_view);
+    },
+    saveMemo: function(args) {
+      var $tags, model, tmp_tags, view;
+      console.log('MemoController.saveMemo()');
+      view = args.view;
+      model = args.model;
+      view.bindUIElements();
+      $tags = view.ui.tags.find('.btn.active');
+      tmp_tags = new Tags();
+      $tags.each((function(_this) {
+        return function(index, tag) {
+          tmp_tags.add(view.tags.get($(tag).data('id')));
+        };
+      })(this));
+      model.set({
+        title: view.ui.title.val().trim(),
+        content: view.ui.contents.val().trim(),
+        note_id: view.ui.note.val(),
+        tags: tmp_tags
+      });
+      model.save().done(function(models, response, options) {
+        console.log('save done');
+        Memos.getInstance().add(model);
+      }).fail(function(models, response, options) {
+        console.log('save fail');
+      });
     },
     memoDelete: function(childview) {
       var d_modal;
