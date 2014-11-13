@@ -39,6 +39,8 @@ define [
 
 			tags_view = new MemoFormTagsView {
 				collection: @tags
+			}, {
+				form_model: @model
 			}
 			@tag_container.show(tags_view)
 

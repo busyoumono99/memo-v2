@@ -24,6 +24,8 @@ define(['underscore', 'marionette', 'app', 'vent', 'templates', 'collections/not
       this.note_container.show(notes_view);
       tags_view = new MemoFormTagsView({
         collection: this.tags
+      }, {
+        form_model: this.model
       });
       this.tag_container.show(tags_view);
     }
