@@ -1,0 +1,13 @@
+//- div.row
+div.modal-dialog
+    div.modal-content
+      div.modal-header
+        button.close(type="button", data-dismiss="modal")
+          span(aria-hidden="true") &times;
+          span.sr-only Close
+        h4.modal-title 保存終了
+      div.modal-body
+        p 保存を終了しました。一覧へ戻ります。
+      div.modal-footer
+        button.btn.btn-default(type="button", data-dismiss="modal", data-go-list="") Close
+

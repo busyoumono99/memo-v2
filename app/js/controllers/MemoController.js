@@ -1,4 +1,4 @@
-define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/memo/MemoFormView', 'views/memo/MemoDeleteModalView', 'models/memo', 'collections/memos', 'collections/notes', 'collections/tags', 'app', 'vent'], function(Marionette, AppLayoutView, MemoListView, MemoFormView, MemoDeleteModalView, Memo, Memos, Notes, Tags, app, vent) {
+define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/memo/MemoFormView', 'views/memo/MemoDeleteModalView', 'views/memo/MemoSaveModalView', 'models/memo', 'collections/memos', 'collections/notes', 'collections/tags', 'app', 'vent'], function(Marionette, AppLayoutView, MemoListView, MemoFormView, MemoDeleteModalView, MemoSaveModalView, Memo, Memos, Notes, Tags, app, vent) {
   'use strict';
   var MemoController;
   console.log('run MemoController');
@@ -60,10 +60,19 @@ define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/m
         tags: tmp_tags
       });
       model.save().done(function(models, response, options) {
+        var s_modal;
         console.log('save done');
         Memos.getInstance().add(model);
+        s_modal = new MemoSaveModalView();
+        s_modal.on('memo:go_list', this.goList, this);
+        vent.trigger('modal:show', s_modal);
       }).fail(function(models, response, options) {
         console.log('save fail');
+      });
+    },
+    goList: function() {
+      Backbone.navigate('#', {
+        trigger: true
       });
     },
     memoDelete: function(childview) {

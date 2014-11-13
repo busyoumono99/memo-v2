@@ -14,7 +14,8 @@ define(function(require) {
       form: require('text!templates/memo/form.html'),
       form_notes: require('text!templates/memo/form_notes.html'),
       form_tags: require('text!templates/memo/form_tags.html'),
-      delete_modal: require('text!templates/memo/delete_modal.html')
+      delete_modal: require('text!templates/memo/delete_modal.html'),
+      save_modal: require('text!templates/memo/save_modal.html')
     }
   };
 });

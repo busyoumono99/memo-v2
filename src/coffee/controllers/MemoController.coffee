@@ -4,13 +4,14 @@ define [
 	'views/memo/MemoListView'
 	'views/memo/MemoFormView'
 	'views/memo/MemoDeleteModalView'
+	'views/memo/MemoSaveModalView'
 	'models/memo'
 	'collections/memos'
 	'collections/notes'
 	'collections/tags'
 	'app'
 	'vent'
-], (Marionette, AppLayoutView, MemoListView, MemoFormView, MemoDeleteModalView, Memo, Memos, Notes, Tags, app, vent) ->
+], (Marionette, AppLayoutView, MemoListView, MemoFormView, MemoDeleteModalView, MemoSaveModalView, Memo, Memos, Notes, Tags, app, vent) ->
 	'use strict'
 	console.log 'run MemoController'
 
@@ -100,12 +101,18 @@ define [
 				# 保存終了後に共有のタグコレクションへ追加
 				Memos.getInstance().add(model)
 				# FIXME:保存完了した旨の通知を表示する処理を追加する。
+				s_modal = new MemoSaveModalView()
+				s_modal.on 'memo:go_list', @goList, @
+				vent.trigger 'modal:show', s_modal
 				return
 			).fail( (models, response, options)->
 				console.log 'save fail'
 				# FIXME:保存が失敗した旨の通知を表示する処理を追加する。
 				return
 			)
+			return
+		goList: ->
+			Backbone.navigate '#', {trigger: true}
 			return
 		memoDelete: (childview) ->
 			# console.log childview
