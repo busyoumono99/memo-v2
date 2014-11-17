@@ -39,9 +39,10 @@ define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/m
         model: new_meno
       });
       app.main.currentView.content.show(create_view);
+      create_view.on('memo:save', this.saveMemo, this);
     },
     saveMemo: function(args) {
-      var $tags, model, tmp_tags, view;
+      var $tags, model, tmp_tags, view, _self;
       console.log('MemoController.saveMemo()');
       view = args.view;
       model = args.model;
@@ -59,19 +60,21 @@ define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/m
         note_id: view.ui.note.val(),
         tags: tmp_tags
       });
+      _self = this;
       model.save().done(function(models, response, options) {
         var s_modal;
         console.log('save done');
         Memos.getInstance().add(model);
         s_modal = new MemoSaveModalView();
-        s_modal.on('memo:go_list', this.goList, this);
+        s_modal.on('memo:go_list', _self.goList, _self);
         vent.trigger('modal:show', s_modal);
       }).fail(function(models, response, options) {
         console.log('save fail');
       });
     },
     goList: function() {
-      Backbone.navigate('#', {
+      console.log('MemoController.goList()');
+      Backbone.history.navigate('#', {
         trigger: true
       });
     },

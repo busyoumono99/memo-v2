@@ -55,6 +55,7 @@ define [
 				model: new_meno
 			}
 			app.main.currentView.content.show(create_view)
+			create_view.on 'memo:save', @saveMemo, @
 			return
 		saveMemo: (args) ->
 			console.log 'MemoController.saveMemo()'
@@ -87,7 +88,7 @@ define [
 				note_id: view.ui.note.val()
 				tags: tmp_tags
 			# console.log JSON.stringify(@model.toJSON())
-
+			_self = @
 			# 保存処理を実行
 			model.save().done( (models, response, options)->
 				console.log 'save done'
@@ -100,9 +101,9 @@ define [
 
 				# 保存終了後に共有のタグコレクションへ追加
 				Memos.getInstance().add(model)
-				# FIXME:保存完了した旨の通知を表示する処理を追加する。
+				# 保存完了した旨の通知
 				s_modal = new MemoSaveModalView()
-				s_modal.on 'memo:go_list', @goList, @
+				s_modal.on 'memo:go_list', _self.goList, _self
 				vent.trigger 'modal:show', s_modal
 				return
 			).fail( (models, response, options)->
@@ -112,7 +113,8 @@ define [
 			)
 			return
 		goList: ->
-			Backbone.navigate '#', {trigger: true}
+			console.log 'MemoController.goList()'
+			Backbone.history.navigate '#', {trigger: true}
 			return
 		memoDelete: (childview) ->
 			# console.log childview
