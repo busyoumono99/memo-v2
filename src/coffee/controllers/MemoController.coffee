@@ -103,8 +103,9 @@ define [
 				Memos.getInstance().add(model)
 				# 保存完了した旨の通知
 				s_modal = new MemoSaveModalView()
-				s_modal.on 'memo:go_list', _self.goList, _self
 				vent.trigger 'modal:show', s_modal
+				# モーダルを閉じるイベントの購読を登録する
+				app.modal.$el.one 'hidden.bs.modal', _self.goList
 				return
 			).fail( (models, response, options)->
 				console.log 'save fail'

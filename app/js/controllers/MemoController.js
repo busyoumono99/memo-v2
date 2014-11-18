@@ -66,8 +66,8 @@ define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/m
         console.log('save done');
         Memos.getInstance().add(model);
         s_modal = new MemoSaveModalView();
-        s_modal.on('memo:go_list', _self.goList, _self);
         vent.trigger('modal:show', s_modal);
+        app.modal.$el.one('hidden.bs.modal', _self.goList);
       }).fail(function(models, response, options) {
         console.log('save fail');
       });
