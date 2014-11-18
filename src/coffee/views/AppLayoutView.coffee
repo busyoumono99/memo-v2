@@ -6,7 +6,8 @@ define [
 	'collections/notes'
 	'collections/tags'
 	'views/SideNotesView'
-], (_, Marionette, templates, Note, Notes, Tags, SideNotesView) ->
+	'views/SideTagsView'
+], (_, Marionette, templates, Note, Notes, Tags, SideNotesView, SideTagsView) ->
 	'use strict'
 
 	return Marionette.LayoutView.extend
@@ -22,6 +23,9 @@ define [
 		initialize: (options) ->
 			@notes = Notes.getInstance()
 			@listenTo(@notes, 'sync', @updateNoteList)
+
+			@tags = Tags.getInstance()
+			@listenTo(@tags, 'sync', @updateTagList)
 
 			return
 
@@ -47,4 +51,13 @@ define [
 			}
 			# console.log notes_view
 			@note_list.show(notes_view)
+			return
+
+		updateTagList: ->
+			# console.log 'run updateTagList()'
+			tags_view = new SideTagsView {
+				collection: @tags
+			}
+			# console.log tags_view
+			@tag_list.show(tags_view)
 			return

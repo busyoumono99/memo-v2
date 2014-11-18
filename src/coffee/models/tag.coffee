@@ -16,5 +16,13 @@ define [
 		url: ->
 			'../../data.memo/tags'
 
+		activeToggle: ->
+			flg = @get('is_active')
+			if flg == 1
+				flg = 0
+			else
+				flg = 1
+			@set('is_active', flg)
+
 
 	Tag.setup()

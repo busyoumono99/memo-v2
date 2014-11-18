@@ -1,4 +1,4 @@
-define(['underscore', 'marionette', 'templates', 'models/note', 'collections/notes', 'collections/tags', 'views/SideNotesView'], function(_, Marionette, templates, Note, Notes, Tags, SideNotesView) {
+define(['underscore', 'marionette', 'templates', 'models/note', 'collections/notes', 'collections/tags', 'views/SideNotesView', 'views/SideTagsView'], function(_, Marionette, templates, Note, Notes, Tags, SideNotesView, SideTagsView) {
   'use strict';
   return Marionette.LayoutView.extend({
     className: 'app-layout',
@@ -11,6 +11,8 @@ define(['underscore', 'marionette', 'templates', 'models/note', 'collections/not
     initialize: function(options) {
       this.notes = Notes.getInstance();
       this.listenTo(this.notes, 'sync', this.updateNoteList);
+      this.tags = Tags.getInstance();
+      this.listenTo(this.tags, 'sync', this.updateTagList);
     },
     onRender: function() {
       console.log('onRender()');
@@ -31,6 +33,13 @@ define(['underscore', 'marionette', 'templates', 'models/note', 'collections/not
         collection: cloneNotes
       });
       this.note_list.show(notes_view);
+    },
+    updateTagList: function() {
+      var tags_view;
+      tags_view = new SideTagsView({
+        collection: this.tags
+      });
+      this.tag_list.show(tags_view);
     }
   });
 });
