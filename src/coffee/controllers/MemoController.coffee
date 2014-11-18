@@ -38,9 +38,15 @@ define [
 			list_view.on 'childview:memo:delete', @memoDelete, @
 			return
 		memoForm: (id) ->
-			console.log 'run memoAdd()'
+			console.log 'run memoForm()'
 
 			edit_memo = Memos.getInstance().get(id)
+			# モデルが空かチェック
+			unless edit_memo?
+				console.log 'edit_memo is null'
+				@goList()
+				return
+
 			form_view = new MemoFormView {
 				model: edit_memo
 			}

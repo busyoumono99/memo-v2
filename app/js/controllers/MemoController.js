@@ -22,8 +22,13 @@ define(['marionette', 'views/AppLayoutView', 'views/memo/MemoListView', 'views/m
     },
     memoForm: function(id) {
       var edit_memo, form_view;
-      console.log('run memoAdd()');
+      console.log('run memoForm()');
       edit_memo = Memos.getInstance().get(id);
+      if (edit_memo == null) {
+        console.log('edit_memo is null');
+        this.goList();
+        return;
+      }
       form_view = new MemoFormView({
         model: edit_memo
       });
