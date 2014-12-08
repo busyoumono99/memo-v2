@@ -10,9 +10,6 @@ define(['backbone', 'backbone-relational-amd'], function(Backbone) {
     parse: function(response) {
       return response;
     },
-    url: function() {
-      return '../../data.memo/tags';
-    },
     activeToggle: function() {
       var flg;
       flg = this.get('is_active');

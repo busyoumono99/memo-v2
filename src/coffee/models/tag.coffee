@@ -13,9 +13,6 @@ define [
 			# console.log 'in Tag.parse()'
 			# console.log response
 			response
-		url: ->
-			'../../data.memo/tags'
-
 		activeToggle: ->
 			flg = @get('is_active')
 			if flg == 1

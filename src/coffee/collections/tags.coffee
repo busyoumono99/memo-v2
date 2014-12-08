@@ -6,11 +6,8 @@ define [
 	console.log 'run tags'
 
 	Tags = Backbone.Collection.extend
-		url: ->
-			id = this.get("tag").id if this.get("tag")
-			created = if id then ("/" + id) else ''
-			'../../data.memo/tags' + created
 		model: Tag
+		url: '../../data.memo/tags'
 		parse: (response) ->
 			console.log 'in Tags.parse()'
 			console.log response

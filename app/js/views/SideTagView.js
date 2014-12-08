@@ -20,8 +20,19 @@ define(['underscore', 'marionette', 'vent', 'templates'], function(_, Marionette
     onClickToggle: function() {
       console.log('SideTagView.onClickToggle()');
       this.model.activeToggle();
+      console.log('in SideTagView.onClickToggle()');
+      console.log(this.model);
       console.log(this.model.toJSON());
-      this.model.save().done(console.log('tag model save() done')).fail(console.log('tag model save() fail'));
+      console.log(this.model.url());
+      this.model.save().done(function(models, response, options) {
+        console.log('save done');
+        console.log(this);
+        console.log(models);
+        console.log(response);
+        console.log(options);
+      }).fail(function() {
+        console.log('tag model save() fail');
+      });
     }
   });
 });

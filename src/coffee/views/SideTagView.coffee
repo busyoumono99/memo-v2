@@ -27,10 +27,20 @@ define [
 			console.log 'SideTagView.onClickToggle()'
 			# @model.set('is_active', 1)
 			@model.activeToggle()
+			console.log 'in SideTagView.onClickToggle()'
+			console.log @model
 			console.log @model.toJSON()
-			@model.save().done(
-				console.log 'tag model save() done'
-			).fail(
+			console.log @model.url()
+			@model.save().done( (models, response, options)->
+				console.log 'save done'
+
+				console.log @
+				console.log models
+				console.log response
+				console.log options
+				return
+			).fail( ->
 				console.log 'tag model save() fail'
+				return
 			)
 			return

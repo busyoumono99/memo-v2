@@ -7,9 +7,6 @@ define(['backbone', 'backbone-relational-amd'], function(Backbone) {
       name: '',
       is_default: 0,
       is_active: 0
-    },
-    url: function() {
-      return '../../data.memo/notes';
     }
   });
   return Note.setup();

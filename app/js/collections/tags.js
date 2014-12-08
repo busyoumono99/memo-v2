@@ -3,15 +3,8 @@ define(['backbone', 'models/tag'], function(Backbone, Tag) {
   var Tags;
   console.log('run tags');
   Tags = Backbone.Collection.extend({
-    url: function() {
-      var created, id;
-      if (this.get("tag")) {
-        id = this.get("tag").id;
-      }
-      created = id ? "/" + id : '';
-      return '../../data.memo/tags' + created;
-    },
     model: Tag,
+    url: '../../data.memo/tags',
     parse: function(response) {
       console.log('in Tags.parse()');
       console.log(response);
