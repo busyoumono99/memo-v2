@@ -15,10 +15,10 @@ define [
 			response
 		activeToggle: ->
 			flg = @get('is_active')
-			if flg == 1
-				flg = 0
+			if flg
+				flg = false
 			else
-				flg = 1
+				flg = true
 			@set('is_active', flg)
 
 

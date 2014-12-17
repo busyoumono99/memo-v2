@@ -13,10 +13,10 @@ define(['backbone', 'backbone-relational-amd'], function(Backbone) {
     activeToggle: function() {
       var flg;
       flg = this.get('is_active');
-      if (flg === 1) {
-        flg = 0;
+      if (flg) {
+        flg = false;
       } else {
-        flg = 1;
+        flg = true;
       }
       return this.set('is_active', flg);
     }

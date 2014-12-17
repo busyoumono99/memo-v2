@@ -6,15 +6,14 @@ define(['underscore', 'marionette', 'vent', 'templates'], function(_, Marionette
     className: 'btn btn-success',
     template: _.template(templates.side.tag),
     ui: {
-      radio: 'input[type="radio"]'
+      checkbox: 'input[type="checkbox"]'
     },
     events: {
       'click': 'onClickToggle'
     },
     onRender: function() {
-      if (this.model.get('is_active') === 1) {
-        this.ui.radio.prop('checked', true);
-        this.$el.addClass('active');
+      if (this.model.get('is_active')) {
+        this.$el.button('toggle');
       }
     },
     onClickToggle: function() {

@@ -12,15 +12,15 @@ define [
 		className: 'btn btn-success'
 		template: _.template(templates.side.tag)
 		ui:
-			radio: 'input[type="radio"]'
+			checkbox: 'input[type="checkbox"]'
 		events:
 			'click': 'onClickToggle'
 
 		onRender: ->
 			# console.log 'SideTagView.onRender()'
-			if @model.get('is_active') == 1
-				@ui.radio.prop('checked', true)
-				@$el.addClass('active')
+			if @model.get('is_active')
+				#	bootstrapのbutton()
+				@$el.button('toggle')
 			return
 
 		onClickToggle: ->
